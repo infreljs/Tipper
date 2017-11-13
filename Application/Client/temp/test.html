@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tipper</title>
+  <link rel="icon" href="../img/Tipper-icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="test.css">
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <div>
+            <img src="../img/menu.png"class="closebtn" onclick="closeNav()">
+        </div>
+        <h1>
+            <br>
+            목록
+        </h1>
+        <hr><br>
+        <a href="#">게시글 작성</a>
+        <a href="#">꿀팁 보기</a>
+        <a href="#">Tip Top Ten</a>
+        <a href="#">금주의 꿀팁</a>
+    </div>
+    <nav class="navbar">
+        <img src="../img/menu.png" class="navbar-brand" href="#" onclick="openNav();">
+        <div id="search-form" class="col-xs-4">
+            <form class="form-inline input-sm">
+                <input id="round-edge" class="search-input input-sm" type="text">&nbsp;
+            </form>
+        </div>
+        <div class="dropdown">
+            <a class="right-menu" onclick="dropdown()">꼬꼬멧 님 </a>
+            <div id="dropdown-menu" class="dropdown-content">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section class="my-container banner">
+        <div class="text text-center">
+            <br><br><br><br><br>
+            <a><strong>너만의 꿀팁 있다면</strong></a>
+            <p>좋은건 나눠쓰자, 나눠쓰면 복이 오니.</p>
+            <br><br><br>
+            <button id="soft-edge"class="btn btn-primary-outline">회원 가입</button>
+            <br><br><br>
+        </div>
+    </section>
+    <section>
+        <div id="ttt">
+            <div>
+                <br><br>
+                <a><strong>팁 탑 텐. <slash>TIP TOP TEN.</slash></strong></a>
+                <p>Tipper가 뽑은 최고의 꿀팁 10가지.<br>여러분도 도전하세요!</p>
+                <button id="soft-edge"class="btn btn-primary-outline">글 작성</button>
+            </div>
+            <div id="cards-five">
+                <div id="one-in-five">
+                    <div class="postcard">
+                        <img src="../img/1.jpg">
+                        <div id="green-img"></div>
+                        <h3>사막에서 물 찾는 방법 - 1</h3>
+                    </div>
+                </div>
+                <div id="one-in-five">
+                    <div class="postcard">
+                        <img src="../img/1.jpg">
+                        <div id="green-img"></div>
+                        <h3>사막에서 물 찾는 방법 - 2</h3>
+                    </div>
+                </div>
+                <div id="one-in-five">
+                    <div class="postcard">
+                        <img src="../img/1.jpg">
+                        <div id="green-img"></div>
+                        <h3>사막에서 물 찾는 방법 - 3</h3>
+                    </div>
+                </div>
+                <div id="one-in-five">
+                    <div class="postcard">
+                        <img src="../img/1.jpg">
+                        <div id="green-img"></div>
+                        <h3>사막에서 물 찾는 방법 - 4</h3>
+                    </div>
+                </div>
+                <div id="one-in-five">
+                    <div class="postcard more-card">
+                        <h4>더 보기</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="pop-con">
+            <div>
+                <br><br>
+                <a>금주의 꿀팁 - 게임 분야</a><hr>
+                <h1><strong>클래시 로얄</strong></h1><br>
+                <button id="soft-edge"class="btn btn-primary-outline">관련 글 작성!</button>
+            </div>
+            <div id="cards-four">
+                <div id="one-in-four">
+                    <div class="postcard">
+                        <img src="../img/1.jpg">
+                        <div id="blue-img"></div>
+                        <h3>사막에서 물 찾는 방법 - 1</h3>
+                    </div>
+                </div>
+                <div id="one-in-four">
+                    <div class="postcard">
+                         <img src="../img/1.jpg">
+                        <div id="blue-img"></div>
+                        <h3>사막에서 물 찾는 방법 - 1</h3>
+                    </div>
+                </div>
+                <div id="one-in-four">
+                    <div class="postcard">
+                        <img src="../img/1.jpg">
+                        <div id="blue-img"></div>
+                        <h3>사막에서 물 찾는 방법 - 1</h3>
+                    </div>
+                </div>
+                <div id="one-in-four">
+                    <div class="postcard more-card">
+                        <h4>더 보기</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<div class="container text-center">
+  <br>
+  <h4>Donate us  <a id="donate" href="https://www.paypal.me/qqq1ppp"><i class="fa fa-paypal" style="font-size:24px"></i></a></h4>
+  <p id="desc">Made by <a href="https://github.com/gohome0001">qqq1ppp</a><br>
+  Designed by <a href="https://github.com/ccomet0810">ccomet</a></p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<script>
+    window.onscroll = function() {scrollFunction()};
+        
+    function scrollFunction() 
+    {
+        document.getElementById("navbar").style.top = "0";
+    }
+
+    function openNav() 
+    {
+        document.getElementById("mySidenav").style.width = "300px";
+    }
+
+    function closeNav() 
+    {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    function dropdown()
+    {
+        document.getElementById("dropdown-menu").classList.toggle("show");
+    }
+    window.onclick = function(event) {
+        if (!event.target.matches('.right-menu')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>`
