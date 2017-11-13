@@ -1,0 +1,233 @@
+.base-container {
+	width: 100%;
+	padding: 0;
+	display: table;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+}
+.div-center {
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    margin: 0 auto;
+    width: 380px;
+    height: 700px;
+    vertical-align: middle;
+}
+.paddin {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+.div-logo {
+    width:100%;
+    text-align:center
+}
+.btn-captcha {
+    color: gray;
+    background-color: white;
+    border: 1.5px solid gray;
+    width: 250px;
+    height: 70px;
+    margin: auto;
+}
+.flexible {
+    flex: 1;
+}
+
+
+
+#logo {
+    width: 50%;
+}
+
+#button-login {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 0px;
+    width: 100%;
+    height: 50px;
+}
+#input-login {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+#text-login {
+    font-size: 16px;    
+}
+
+
+
+#input-register {
+    border: none;
+    border-bottom: 1px solid black;
+    flex: 1;
+}
+#text-register {
+    flex: 1;
+    font-size: 22px;
+}
+#button-register {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 0px;
+    width: 100%;
+    height: 50px;
+}
+#check-register {
+    background:url(../img/check-gray.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+    margin-left: 10px;
+}
+#check-register:hover {
+    background:url(../img/check-black.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+}
+#warning-register {
+    background:url(../img/question-gray.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+    margin-left: 10px;
+}
+#warning-register:hover {
+    background:url(../img/question-black.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+}
+
+
+
+#input-account-1 {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+#text-account-1 {
+    font-size: 14px;
+}
+#button-account-1 {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 0px;
+    width: 100%;
+    height: 50px;
+}
+
+
+
+#input-account-2 {
+    flex: 1;
+    border: none;
+    border-bottom: 1px solid black;
+}
+#text-account-2 {
+    flex: 1;
+    font-size: 22px;
+}
+#button-account-2 {
+    padding-bottom: 0;
+    padding-top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    border-radius: 0px;
+    width: 100%;
+    height: 50px;
+}
+#warning-account-2 {
+    background:url(../img/question-gray.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+    margin-left: 10px;
+}
+#warning-account-2:hover {
+    background:url(../img/question-black.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+}
+#check-account-2 {
+    background:url(../img/check-gray.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+    margin-left: 10px;
+}
+#check-account-2:hover {
+    background:url(../img/check-black.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+}
+
+#text-byeforever {
+    flex: 1;
+    font-size: 22px;
+}
+#input-byeforever {
+    border: none;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+#check-byeforever {
+    background:url(../img/check-gray.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+    margin-left: 10px;
+}
+#check-byeforever:hover {
+    background:url(../img/check-black.png) no-repeat;
+    cursor:pointer;
+    border:none;
+    width:32px;
+    height:32px;
+}
+
+a {
+    color: gray;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+input {
+    margin: 0;
+}
