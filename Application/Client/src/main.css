@@ -6,6 +6,10 @@ body{
 slash{
     font-style:italic;
 }
+profile{
+    color : white;
+    font-size : 15px;
+}
 .main_img img {
     width: 100%;
     height: 100%;
@@ -39,30 +43,58 @@ slash{
 #desc{
     font-size : 10pt;
 }
-
-.show {
-    display:block;
+#profile-menu{
+    background-color: rgb(96,96,255);
+    float : center;
+    right : 0;
+    padding : 5px 60px 5px 5px;
 }
-
+#avatar{
+    border-radius: 50%;
+    height : 40px;
+    width : 40px;
+    margin-right : 10px;
+    margin-left : 10px;
+}
+#sub{
+    font-size : 10px;
+}
 .right-menu{
     color : white !important;
     font-size : 10pt;
     text-decoration: none;
 }
+
 .dropdown{
     position:relative;
     display:inline-block;
     cursor: pointer;
 }
 .dropdown-content {
+    margin-top : 12px;
+    right : 0;
     display: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 200px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 9998;
 }
+.dropdown-content a {
+    background-color : rgb(66,66,114);
+    color : white;
+    font-size : 10px;
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    right : 90px;
+}
+
+.show {
+    display:block;
+}
+
 .right-menu:hover{
     text-decoration : none;
     color : white;
@@ -146,7 +178,7 @@ slash{
     height : 100%;
     background-color : green;
     filter : opacity(0.6) brightness(65%);
-    z-index : 2;
+    z-index : 55;
     position : absolute;
     margin-top : -190px;
 }
@@ -156,18 +188,16 @@ slash{
     height : 100%;
     background-color : white;
     filter : opacity(0.3) brightness(40%);
-    z-index : 2;
+    z-index : 55;
     position : absolute;
     margin-top : -190px;
 }
-
-
 #blue-img{
     width : 100%;
     height : 100%;
     background-color :#060636;
     filter : opacity(0.6) brightness(65%);
-    z-index : 2;
+    z-index : 55;
     position : absolute;
     margin-top : -190px;
 }
@@ -175,10 +205,65 @@ slash{
     width : 100%;
     height : 100%;
     background-color : white;
-    filter : opacity(0.3) brightness(40%);
-    z-index : 2;
+    filter : opacity(0.3) brightness(40%)f;
+    z-index : 55;
     position : absolute;
     margin-top : -190px;
+}
+
+.board-admin-info{
+    margin : 0 auto;
+    width : 270px;
+}
+.admin-info-box{
+    text-align: center;
+    float: left;
+    white-space: nowrap;
+}
+.box-border-l{
+    padding-right : 25px;
+    border-right : solid 0.1px white;
+}
+.box-border-r{
+    padding-left : 25px;
+    border-left : solid 0.1px white;
+}
+.board-index{
+    cursor: pointer;
+    color : rgb(149,152,154);
+    margin : 1px 5px 5px 1px;
+}
+.board-index:hover{
+    color : black;
+}
+.index-set{
+    /*the selected index*/
+    color : black !important;
+}
+
+.text-center{
+    text-align: center;
+}
+.container{
+    width : 68%;
+} 
+.grey-board{
+    color : rgb(149,152,154);
+    font-size : 18px;
+}
+.post-search{
+    background-color : transparent;
+    border : solid 1.2px rgb(158, 158, 159);
+    border-radius : 12px 12px 12px 12px;
+    width : 30%;
+    font-size : 15px;
+    color : rgb(126, 127, 128);
+    padding : 6px 15px 6px 10px;
+}
+.post-search-form{
+    margin-top : 60px;
+    margin-bottom: 50px;
+    text-align: center;
 }
 .postcard {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
@@ -211,7 +296,7 @@ slash{
     height : 100%;
     background-color : white;
     filter : opacity(0.3) brightness(40%);
-    z-index : 2;
+    z-index : 55;
     position : absolute;
     margin-top : -190px;
 }
@@ -220,7 +305,7 @@ slash{
     height : 100%;
     background-color : white;
     filter : opacity(0.3) brightness(40%);
-    z-index : 2;
+    z-index : 55;
     position : absolute;
     margin-top : -190px;
 }
@@ -252,7 +337,7 @@ slash{
     font-size: 22px;
     height: 400;
     width:100%;
-    margin: 0 0 10px;
+    margin: 0px 0px 10px;
 }
 
 .text p{
@@ -280,7 +365,20 @@ slash{
     background-position: center center;
     position: relative;
 }
-
+.greet{
+    background-color : rgb(149,152,154);
+    height : 450px;
+    width : 100%;
+    text-align: center;
+    color : white;
+    
+}
+.greet a{
+    font-size : 40px;
+}
+.greet br{
+    font-size : 20px;
+}
 .search-input{
     width : 250px;
     border : 1.2px;
@@ -304,7 +402,7 @@ slash{
     color : white;
     margin: auto;
     position: relative;
-    width: 90%
+    width: 90%;
 }
 
 .navbar-brand{
@@ -332,14 +430,14 @@ slash{
 .navbar{
     position: fixed;
     background-color:#060636;
-    z-index : 99999;
+    z-index : 99;
     width : 100%;
 }
 .sidenav {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 999999999;
+    z-index: 999;
     top: 0;
     left: 0;
     background-color: #03031e;

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="test.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
@@ -34,9 +34,14 @@
         <div class="dropdown">
             <a class="right-menu" onclick="dropdown()">꼬꼬멧 님 </a>
             <div id="dropdown-menu" class="dropdown-content">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <div id="profile-menu">
+                    <img src="../img/cry.png" id="avatar">
+                    <profile>꼬꼬멧 | </profile><profile id="sub">000포인트</profile>
+                </div>
+                <a href="#">포인트 확인</a>
+                <a href="#">내가 쓴 꿀팁</a>
+                <a href="#">프로필 수정</a>
+                <a href="#">로그아웃</a>
             </div>
         </div>
     </nav>
@@ -132,8 +137,8 @@
         </div>
 
     </section>
-
-<div class="container text-center">
+<fotter>
+    <div class="container text-center">
   <br>
   <h4>Donate us  <a id="donate" href="https://www.paypal.me/qqq1ppp"><i class="fa fa-paypal" style="font-size:24px"></i></a></h4>
   <p id="desc">Made by <a href="https://github.com/gohome0001">qqq1ppp</a><br>
@@ -142,39 +147,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-<script>
-    window.onscroll = function() {scrollFunction()};
-        
-    function scrollFunction() 
-    {
-        document.getElementById("navbar").style.top = "0";
-    }
-
-    function openNav() 
-    {
-        document.getElementById("mySidenav").style.width = "300px";
-    }
-
-    function closeNav() 
-    {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-    function dropdown()
-    {
-        document.getElementById("dropdown-menu").classList.toggle("show");
-    }
-    window.onclick = function(event) {
-        if (!event.target.matches('.right-menu')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-</script>
+<script src="js/main.js"></script>
+</fotter>
 </body>
 </html>`

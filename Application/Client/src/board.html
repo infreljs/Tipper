@@ -1,0 +1,129 @@
+<html>
+    <head>
+            <title>Tipper - board</title>
+            <link rel="icon" href="../img/Tipper-icon.png">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+        <div id="mySidenav" class="sidenav">
+        <div>
+            <img src="../img/menu.png"class="closebtn" onclick="closeNav()">
+        </div>
+        <h1>
+            <br>
+            목록
+        </h1>
+        <hr><br>
+        <a href="#">게시글 작성</a>
+        <a href="#">꿀팁 보기</a>
+        <a href="#">Tip Top Ten</a>
+        <a href="#">금주의 꿀팁</a>
+    </div>
+    <nav class="navbar">
+        <img src="../img/menu.png" class="navbar-brand" href="#" onclick="openNav();">
+        <div id="search-form" class="col-xs-4">
+            <form class="form-inline input-sm">
+                <input id="round-edge" class="search-input input-sm" type="text">&nbsp;
+            </form>
+        </div>
+        <div class="dropdown">
+            <a class="right-menu" onclick="dropdown()">꼬꼬멧 님 </a>
+            <div id="dropdown-menu" class="dropdown-content">
+                <div id="profile-menu">
+                    <img src="../img/cry.png" id="avatar">
+                    <profile>꼬꼬멧 | </profile><profile id="sub">000포인트</profile>
+                </div>
+                <a href="#">포인트 확인</a>
+                <a href="#">내가 쓴 꿀팁</a>
+                <a href="#">프로필 수정</a>
+                <a href="#">로그아웃</a>
+            </div>
+        </div>
+    </nav>
+    <div class="greet">
+        <br><br><br><br><br>
+        <h1><strong>환영합니다. 게시글 관리자 CRJW 님</strong></h1>
+        <br><br>
+        <div class="board-admin-info" align="centers">
+            <div class="admin-info-box box-border-l">
+                <p>총 팁 수</p>
+                <h1>000개</h1>
+            </div>
+            <div class="admin-info-box box-border-r">
+                <p>총 자유글 수</p>
+                <h1>000개</h1>
+            </div>
+        </div>
+    </div>
+    <div class='post-search-form'>
+        <input type="text" class="post-search" placeholder="게시글 검색">
+    </div>
+    <div class="container">
+    <div class="grey-board">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th class="text-center">제목</th>
+                <th>가격</th>
+                <th>추천</th>
+                <th>비추천</th>
+                <th>조회수</th>
+                <th>분류</th>
+                <th>포인트</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>당신이 생각한 바로 그 제목</td>
+                <td>20000</td>
+                <td>31</td>
+                <td>44</td>
+                <td>3021</td>
+                <td>생활</td>
+                <td>24341pt</td>
+            </tr>
+            <tr>
+                <td>당신이 생각한 바로 그 제목</td>
+                <td>20000</td>
+                <td>31</td>
+                <td>44</td>
+                <td>3021</td>
+                <td>생활</td>
+                <td>24341pt</td>
+            </tr>
+            <tr>
+                <td>당신이 생각한 바로 그 제목</td>
+                <td>20000</td>
+                <td>31</td>
+                <td>44</td>
+                <td>3021</td>
+                <td>생활</td>
+                <td>24341pt</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <div class="container text-center">
+        <a href="#"class="board-index">1 </a>
+        <a href="#"class="board-index"> 2 </a>
+    </div>
+
+    <fotter>
+            <div class="container text-center">
+          <br>
+          <h4>Donate us  <a id="donate" href="https://www.paypal.me/qqq1ppp"><i class="fa fa-paypal" style="font-size:24px"></i></a></h4>
+          <p id="desc">Made by <a href="https://github.com/gohome0001">qqq1ppp</a><br>
+          Designed by <a href="https://github.com/ccomet0810">ccomet</a></p>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+        </fotter>
+    </body>
+</html>
