@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended : false}));
 exports.payed_tips = function(req , res){
     conn = mysql.createConnection({
         host : 'localhost',
-        user : 'root',
+        user : 'root', 
         password : '12341234',
         database : 'tipper'
     });
