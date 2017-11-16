@@ -12,7 +12,6 @@ var point_minus = require('./point_minus');
 var account_destroy = require('./account_destroy');
 var ck_admin = require('./ck_admin');
 var payed_tips = require('./payed_tips');
-var index = require('./show_index');
 var fs = require('fs');
 
 app.use(express.static('../Client'));
@@ -31,7 +30,7 @@ app.post('/users/account_destroy', account_destroy.account_destroy);
 app.post('/users/ck_admin', ck_admin.ck_admin);
 app.post('/users/payed_tips', payed_tips.payed_tips);
 app.get('/', function (req, res) {
-    fs.readFile('../Client/board.html', function (error, data) {
+    fs.readFile('../Client/temp/test.html', function (error, data) {
         if (error) {
             console.log(error);
         }
