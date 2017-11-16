@@ -13,7 +13,7 @@ exports.payed_tips = function(req , res){
         password : '12341234',
         database : 'tipper'
     });
-    var res = "";
+    var result = "";
     var user_id = req.body.user_id;
     var sql = "select * from payed WHERE user_id = '"+user_id+"'";
     conn.query(sql, function(err, results){
@@ -23,9 +23,9 @@ exports.payed_tips = function(req , res){
             throw err;
         }
         for(var i=0;i<length;i++){
-            res = res+ '{title : '+results[i].title+', price : '+results[i].price+', writer : '+results[i].user_id+'}';
+            result = result+ '{title : '+results[i].title+', price : '+results[i].price+', writer : '+results[i].user_id+'}';
         }
-        res = res.substring(0, res.length-1);
-        res.json({result : res});
+        result = result.substring(0, result.length);
+        res.json({results : result});
     });
 };
