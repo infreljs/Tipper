@@ -10,6 +10,12 @@ profile{
     color : white;
     font-size : 15px;
 }
+input:focus {
+    outline:none;
+}
+textarea:focus {
+    outline: none;
+}
 .main_img img {
     width: 100%;
     height: 100%;
@@ -210,10 +216,81 @@ profile{
     position : absolute;
     margin-top : -190px;
 }
+#input-title{
+    width : 100%;
+    font-size : 50px;
+    border-top : none;
+    border-right : none;
+    border-left : none;
+    border-bottom : solid 1.5px rgb(149,152,154);
+    color : rgb(149,152,154);
+    font-weight: bold;
+}
+#input-title::-webkit-input-placeholder{
+    color : rgb(182, 182, 182);
+}
+#input-content{
+    width : 100%;
+    height : 400px;
+    padding-top : 35px;
+    padding-left : 20px;
+    padding-right : 20px;
+    padding-bottom : 10px;
+    border : none;
+    color : rgb(97, 98, 100);
+}
+#input-submit{
+    background : none;
+    border : none;
+    float : right;
+    cursor: pointer;
+    transition: 0s font-size;
+    font-size : 18px;
+    color : rgb(149,152,154);
+}
+#input-submit:hover{
+    font-size : 20px;
+    transition-delay:0.1s;
+}
+#upload{
+    float:left;
+    height : 35px;
+    width : 35px;
+}
+#upload > input
+{
+    display: none;
+}
 
-.board-admin-info{
+#upload i
+{
+    padding-left:5px;
+    padding-right : 5px;
+    cursor: pointer;
+    font-size:25px;
+    color : rgb(149,152,154);
+}
+
+.posting-form{
+    margin : 0 auto;
+    width : 51%;
+    padding-top : 100px;
+}
+.posting-form br{
+    font-size : 10px;
+}
+.posting-form  hr{
+    color : rgb(149,152,154);
+    height : 0.5px;
+    background-color : rgb(163, 164, 165);
+}
+.board-admin-info-two{
     margin : 0 auto;
     width : 270px;
+}
+.board-admin-info-five{
+    margin : 0 auto;
+    width : 735px;
 }
 .admin-info-box{
     text-align: center;
