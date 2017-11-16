@@ -1,0 +1,385 @@
+body{
+    background-color : white;
+    box-sizing : border-box;
+    white-space:nowrap !important;
+}
+slash{
+    font-style:italic;
+}
+.main_img img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(90%);
+}
+#soft-edge{
+    border-radius: 5px 5px 5px 5px;
+}
+
+#round-edge{
+    border-radius: 15px 15px 15px 15px;
+}
+#more-rounded-edge{
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 10px;
+}
+#search-form{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+#donate{
+    color:black;
+}
+#donate:hover{
+    color:rgb(238, 219, 77);
+    text-decoration: none;
+}
+
+
+#desc{
+    font-size : 10pt;
+}
+
+.show {
+    display:block;
+}
+
+.right-menu{
+    color : white !important;
+    font-size : 10pt;
+    text-decoration: none;
+}
+.dropdown{
+    position:relative;
+    display:inline-block;
+    cursor: pointer;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.right-menu:hover{
+    text-decoration : none;
+    color : white;
+}
+
+#ttt{
+    background-image : url(../img/tiptopten.png);
+    height: 550px;
+    width: 100%;
+    background-size : cover;
+    background-position: center left;
+}
+#ttt strong{
+    color :black;
+    padding-left: 400px;
+    font-size : 40px;
+}
+#ttt br{
+    padding-top: 5px;
+}
+#ttt p{
+    font-size : 15px;
+    padding-left: 400px;
+    color : grey;
+    padding-top : 10px;
+}
+#ttt button{
+    margin-left : 400px;
+}
+#search-btn{
+    left : -70px;
+}
+#pop-con{
+    background-image: url(../img/cry.png);
+    height: 550px;
+    width: 100%;
+    background-size : cover;
+    background-position: center center;
+    text-align: center;
+}
+
+#pop-con a{
+    font-size : 15px;
+    color : white;
+}
+#pop-con hr{
+    border : none;
+    height : 1px;
+    background-color: white;
+    color : white;
+    width : 120px;
+}
+#cards-five{
+    margin-top: 30px;
+    padding-left : 100px;
+    padding-right : 100px;
+    width : 3000px;
+    margin-left: 30px;
+    margin-right : 30px;
+}
+#one-in-five{
+    float: left;
+    white-space: nowrap;
+}
+#cards-four{
+    margin-top: 30px;
+    margin-left: 60px;
+    margin-right : 30px;
+    width : 3000px;
+    padding-left : 200px;
+    padding-right : 200px;
+}
+
+#one-in-four{
+    float : left;
+    white-space: nowrap;
+}
+
+#green-img{
+    width : 100%;
+    height : 100%;
+    background-color : green;
+    filter : opacity(0.6) brightness(65%);
+    z-index : 2;
+    position : absolute;
+    margin-top : -190px;
+}
+
+#green-img:hover{
+    width : 100%;
+    height : 100%;
+    background-color : white;
+    filter : opacity(0.3) brightness(40%);
+    z-index : 2;
+    position : absolute;
+    margin-top : -190px;
+}
+
+
+#blue-img{
+    width : 100%;
+    height : 100%;
+    background-color :#060636;
+    filter : opacity(0.6) brightness(65%);
+    z-index : 2;
+    position : absolute;
+    margin-top : -190px;
+}
+#blue-img:hover{
+    width : 100%;
+    height : 100%;
+    background-color : white;
+    filter : opacity(0.3) brightness(40%);
+    z-index : 2;
+    position : absolute;
+    margin-top : -190px;
+}
+.postcard {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin : 20px;
+    text-align: center;
+    background-color: white;
+    width : 210px;
+    height : 190px;
+    position : relative;
+    cursor: pointer;
+}
+.postcard img{
+    height : 100%;
+    width : 100%;
+    z-index : 1;
+}
+.postcard h3{
+    color : white;
+    font-family: "Roboto script=all rev=1", "Adobe Blank";
+    font-weight: 300;
+    z-index : 3;
+    position : absolute;
+    margin-top : -190px;
+    padding : 15px;
+    white-space: pre-wrap;
+    text-align: left;
+}
+.postcard:hover #green-img{
+    width : 100%;
+    height : 100%;
+    background-color : white;
+    filter : opacity(0.3) brightness(40%);
+    z-index : 2;
+    position : absolute;
+    margin-top : -190px;
+}
+.postcard:hover #blue-img{
+    width : 100%;
+    height : 100%;
+    background-color : white;
+    filter : opacity(0.3) brightness(40%);
+    z-index : 2;
+    position : absolute;
+    margin-top : -190px;
+}
+
+
+.more-card h4{
+    font-size: 20px;
+    color : #060636;
+    text-align: center;
+    vertical-align: middle;
+    margin-top : 80px;
+    margin-bottom : 80px;
+    font-family : "Roboto script=all rev=2";
+}
+.more-card{
+    border : 2px solid #060636;
+    background: none;
+}
+.more-card:hover{
+    border : 2px solid #060636;
+    color : white;
+}
+.more-card:hover h4{
+    font-size : 24px;
+    margin-top : 78px;
+    margin-bottom : 78px;
+}
+.text br{
+    font-size: 22px;
+    height: 400;
+    width:100%;
+    margin: 0 0 10px;
+}
+
+.text p{
+    margin: 5px;
+    font-size : 18px;
+    color : #dcdadacb;
+}
+
+.text a{
+    font-size: 25px;
+    height: 400;
+    width:100%;
+    margin: 0 0 10px;
+    font-family : arial, bold !important;
+    color : white;
+}
+
+.long-btn{
+    font-size : 20px;
+}
+.banner{
+    background-image: url(../img/banner.png);
+    background-repeat: no-repeat;
+    background-size : cover;
+    background-position: center center;
+    position: relative;
+}
+
+.search-input{
+    width : 250px;
+    border : 1.2px;
+    border-style: solid;
+    background-color: transparent;
+    border-color : white;
+    padding-left : 10px;
+    padding-right: 25px;
+    background-image: url(../img/search.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.search-input:focus{
+    outline: none;
+    background-color: transparent;
+    color : white;
+}
+.banner .text{
+    color : white;
+    margin: auto;
+    position: relative;
+    width: 90%
+}
+
+.navbar-brand{
+    cursor: pointer;
+}
+
+.btn-primary-outline {
+    z-index: 10;
+    cursor: pointer;
+    background-color: transparent;
+    border-color: rgb(6, 160, 4);
+    color : rgb(6, 160, 4);
+    font-size : 12px;
+    width : 120px;
+}
+.btn-primary-outline:hover {
+    cursor : pointer;
+    background-color: transparent;
+    border-color: rgb(6, 160, 4);
+    color : rgb(6, 160, 4);
+    font-size : 12px;
+    font-family: "bold";
+    width : 120px;
+}
+.navbar{
+    position: fixed;
+    background-color:#060636;
+    z-index : 99999;
+    width : 100%;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999999999;
+    top: 0;
+    left: 0;
+    background-color: #03031e;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 6px 6px 6px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav h1{
+    font-size:35px;
+    padding : 4px 4px 4px 20px;
+    color : #818181;
+    transition : 0.3s;
+}
+
+.sidenav h1:hover{
+    color :white;
+}
+.sidenav hr{
+    margin-left : 20px;
+    position : left;
+    color :#81818181;
+    width : 230px;
+    border : 1px solid ;
+    /*border 속성을 없애야됨*/
+}
+
+.sidenav a:hover {
+    color: white;
+}
+
+.sidenav .closebtn {
+    cursor: pointer;
+    padding : 13px 16px;
+}
+
