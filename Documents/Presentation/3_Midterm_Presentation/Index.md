@@ -32,7 +32,7 @@
     * AWS EC2 이용하여 Ubuntu 16.04 LTS 서버 구축 완료
     * Docker 이용하여 Jenkins, MySQL 및 Node.js 서버 환경 구축 완료
 * CI
-    * Jenkins 이용하여 GitHub 연동 자동 빌드 및 배포 시스템 구축 중
+    * Jenkins 이용하여 GitHub 연동 자동 빌드 및 배포 시스템 구축 완료
     * Mocha 이용한 Node.js 서버 테스트 자동화 구현 중
 
 ## 사용 기술
