@@ -16,7 +16,7 @@ var fs = require('fs');
 
 app.use(express.static('../Client'));
 app.use(bodyParser.urlencoded({ extended : false}));
-app.listen(3333, function(){
+app.listen(80, function(){
     console.log('connected!');
 });
 app.post('/tipboard/write', write_tipboard.writeTipboard);
