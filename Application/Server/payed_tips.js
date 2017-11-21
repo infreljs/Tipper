@@ -23,9 +23,10 @@ exports.payed_tips = function(req , res){
             throw err;
         }
         for(var i=0;i<length;i++){
-            result = result+ '{title : '+results[i].title+', price : '+results[i].price+', writer : '+results[i].user_id+'}';
+            //result = result+ '{title : '+results[i].title+', price : '+results[i].price+', writer : '+results[i].user_id+'}';
+            result.push({title : results[i].title, price : results[i].price, writer : results[i].user_id});
         }
-        result = result.substring(0, result.length);
-        res.json({results : result});
+        res.contentType('application/json');
+        res.send(JSON.stringify(result));
     });
 };
