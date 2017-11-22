@@ -1,15 +1,11 @@
 $(document).ready(function () {
-    $('.dropdown>button').on('focusin', function () {
+    $('.dropdown button').on('focusin', function () {
         $('.dropdown-content').addClass('show');
     });
-    $('.dropdown>button').on('focusout', function () {
+    $('.dropdown button').on('focusout', function () {
         $('.dropdown-content').removeClass('show');
     });
 });
-
-window.onscroll = function () {
-    document.getElementsByClassName("navbar")[0].style.top = "0";
-};
 
 var sidebar_component = {
     template: `
@@ -25,18 +21,42 @@ var sidebar_component = {
     `
 };
 
-new Vue({
+var sidebar = new Vue({
     el: "#sidebar",
     components: {
         'sidebar': sidebar_component
     }
 });
 
-var user_dropdown = new Vue({
-    el: '#user-dropdown',
-    data: {
-        username: "꼬꼬맷",
-        point: "100"
+var username = "꼬꼬맷";
+var point = 100;
+var navbar_component = {
+    template: `
+        <div>
+            <img src="../img/menu.png" class="navbar-brand" href="#" onclick='$("#sidebar").width(250);'>
+            <input id="search" class="search-input round-edge input-sm" type="text">
+            <div id="user-dropdown" class="dropdown">
+                <div>
+                    <button v-cloak>` + username + ` 님</button>
+                    <div class="dropdown-content">
+                        <div class="dropdown-profile">
+                            <span class="font-sm">` + username + ` <span class="gray">|</span> ` + point + ` p</span>
+                        </div>
+                        <a href="#">내 포인트</a>
+                        <a href="#">내가 쓴 꿀팁</a>
+                        <a href="#">프로필 수정</a>
+                        <a href="#">로그아웃</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+}
+
+var navbar = new Vue({
+    el: '#navbar',
+    components: {
+        'navbar': navbar_component
     }
 });
 

@@ -22,16 +22,7 @@
                 <input id="search" class="search-input round-edge input-sm" type="text">
             </div>
             <div id="user-dropdown" class="dropdown">
-                <button v-cloak>{{ username }} 님</button>
-                <div class="dropdown-content">
-                    <div class="dropdown-profile">
-                        <span class="font-sm">{{ username }} <span class="gray">|</span> {{ point }} p</span>
-                    </div>
-                    <a href="#">포인트 확인</a>
-                    <a href="#">내가 쓴 꿀팁</a>
-                    <a href="#">프로필 수정</a>
-                    <a href="#">로그아웃</a>
-                </div>
+                <user-dropdown></user-dropdown>
             </div>
         </nav>
         <div class="dashboard topnav-margin">
