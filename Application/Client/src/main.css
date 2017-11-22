@@ -1,7 +1,6 @@
 body{
     background-color : white;
     box-sizing : border-box;
-    white-space:nowrap !important;
 }
 slash{
     font-style:italic;
@@ -10,17 +9,17 @@ profile{
     color : white;
     font-size : 15px;
 }
+
 input:focus {
     outline:none;
 }
 textarea:focus {
     outline: none;
 }
-.main_img img {
-    width: 100%;
-    height: 100%;
-    filter: brightness(90%);
+qqq{
+    display : block;
 }
+
 #soft-edge{
     border-radius: 5px 5px 5px 5px;
 }
@@ -44,7 +43,9 @@ textarea:focus {
     color:rgb(238, 219, 77);
     text-decoration: none;
 }
-
+#space-banner{
+    height : 50px;
+}
 
 #desc{
     font-size : 10pt;
@@ -64,46 +65,6 @@ textarea:focus {
 }
 #sub{
     font-size : 10px;
-}
-.right-menu{
-    color : white !important;
-    font-size : 10pt;
-    text-decoration: none;
-}
-
-.dropdown{
-    position:relative;
-    display:inline-block;
-    cursor: pointer;
-}
-.dropdown-content {
-    margin-top : 12px;
-    right : 0;
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 200px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 9998;
-}
-.dropdown-content a {
-    background-color : rgb(66,66,114);
-    color : white;
-    font-size : 10px;
-    padding: 14px 18px;
-    text-decoration: none;
-    display: block;
-    right : 90px;
-}
-
-.show {
-    display:block;
-}
-
-.right-menu:hover{
-    text-decoration : none;
-    color : white;
 }
 
 #ttt{
@@ -178,6 +139,10 @@ textarea:focus {
     float : left;
     white-space: nowrap;
 }
+#max-th{
+    width : 60%;
+    padding-left : 30px;
+}
 
 #green-img{
     width : 100%;
@@ -216,9 +181,21 @@ textarea:focus {
     position : absolute;
     margin-top : -190px;
 }
+#post-title{
+    margin : 0 auto;
+    width : 65%;
+    text-align: center;
+    color : #060636;
+    padding-top : 130px;
+}
+#post-title > h1{
+    display : inline-block;
+    font-size : 53px;
+    vertical-align: middle;
+    font-weight: normal;
+}
 #input-title{
     width : 100%;
-    font-size : 50px;
     border-top : none;
     border-right : none;
     border-left : none;
@@ -270,7 +247,86 @@ textarea:focus {
     font-size:25px;
     color : rgb(149,152,154);
 }
+#board-title{
+    padding-top : 150px;
+    padding-bottom : 10px;
+    color : #060636;
+    font-weight: lighter;
+}
+#grey-info{
+    color : rgb(149,152,154);
+    padding: 5px;
+    font-size : 20px;
+    border-bottom : solid 1px rgb(149,152,154);
+}
+#grey-info a{
+    text-decoration: none;
+    color : rgb(149,152,154);
+}
 
+#grey-info a:hover{
+    color : #060636;
+}
+#post-data{
+    margin-top : 60px;
+    margin-bottom : 60px;
+    color : #060636;
+    font-size : 18px;
+    white-space: pre-line;
+}
+
+.table td{
+    border : none;
+}
+.main_img img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(90%);
+}
+.grey-text tr{
+    color : rgb(149,152,154);
+    font-weight: normal;
+}
+.right-menu{
+    color : white !important;
+    font-size : 10pt;
+    text-decoration: none;
+}
+
+.dropdown{
+    position:relative;
+    display:inline-block;
+    cursor: pointer;
+}
+.dropdown-content {
+    margin-top : 12px;
+    right : 0;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9998;
+}
+.dropdown-content a {
+    background-color : rgb(66,66,114);
+    color : white;
+    font-size : 10px;
+    padding: 14px 18px;
+    text-decoration: none;
+    display: block;
+    right : 90px;
+}
+
+.show {
+    display:block;
+}
+
+.right-menu:hover{
+    text-decoration : none;
+    color : white;
+}
 .posting-form{
     margin : 0 auto;
     width : 51%;
@@ -286,7 +342,7 @@ textarea:focus {
 }
 .board-admin-info-two{
     margin : 0 auto;
-    width : 270px;
+    width : 271px;
 }
 .board-admin-info-five{
     margin : 0 auto;
@@ -328,6 +384,24 @@ textarea:focus {
     color : rgb(149,152,154);
     font-size : 18px;
 }
+.post-content{
+    width : 53%;
+    margin : 0 auto;
+}
+.post-stat{
+    padding-top : 30px;
+    padding-bottom: 30px;
+    border-bottom: solid 1px rgb(149,152,154);
+}
+.post-profile{
+    padding-top : 15px;
+    padding-bottom : 15px;
+    padding-left : 5px;
+    padding-right : 30px;
+    width : 70%;
+    display : flex;
+    height : 130px;
+}
 .post-search{
     background-color : transparent;
     border : solid 1.2px rgb(158, 158, 159);
@@ -337,10 +411,32 @@ textarea:focus {
     color : rgb(126, 127, 128);
     padding : 6px 15px 6px 10px;
 }
+.post-profile-image{
+    height : 100px;
+    width : 100px;
+    border-radius: 50%;
+    margin-right : 20px;
+}
 .post-search-form{
     margin-top : 60px;
     margin-bottom: 50px;
     text-align: center;
+}
+.profile-desc{
+    float : left;
+    height: 100px;
+}
+.profile-desc br{
+    font-size : 0px;
+}
+.profile-name{
+    font-size : 40px;
+    color : #060636;
+}
+.profile-intro{
+    padding-bottom : 20px;
+    color : rgb(149,152,154);
+    font-size : 20px;
 }
 .postcard {
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
