@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tipper</title>
+        <!-- Icon -->
+        <link rel="icon" href="img/Tipper-icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/template.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+            <sidebar></sidebar>
+        </nav>
+        <nav id="navbar" class="navbar">
+            <navbar></navbar>
+        </nav>
+        <section class="banner text-center topnav-margin">
+            <div>
+                <p class="header1">너만의 꿀팁 있다면</p>
+                <p class="header2">좋은건 나눠쓰자, 나눠쓰면 복이 오니.</p>
+                <button id="soft-edge" class="btn btn-outline-success btn-main" href="/">회원 가입</button>
+            </div>
+        </section>
+        <section class="tip-top-ten">
+            <div>
+                <p class="header strong">팁 탑 텐. <span class="italic">TIP TOP TEN.</span></p>
+                <p>Tipper가 뽑은 취고의 꿀팁 10가지.<br>여러분도 도전하세요!</p>
+                <button id="soft-edge" class="btn btn-outline-success btn-main">글 작성</button>
+            </div>
+            <div id="tip-top-ten-cards" class="cards">
+                <div class="tip-card" v-for="item in list">
+                    <div class="postcard">
+                        <img :src="item.img">
+                        <div class="green-filter"></div>
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="postcard more-card">
+                        <h4>더 보기</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="weekly-tip" class="weekly-tip">
+            <div>
+                <p class="header">금주의 꿀팁 - 게임 분야</p>
+                <hr>
+                <h1 class="title">{{ title }}</h1>
+                <button id="soft-edge" class="btn btn-outline-success btn-main">관련 글 작성!</button>
+            </div>
+            <div class="cards">
+                <div class="tip-card" v-for="item in list">
+                    <div class="postcard">
+                        <img :src="item.img">
+                        <div class="blue-filter"></div>
+                        <h3>{{ item.title }}</h3>
+                    </div>
+                </div>
+                <div class="tip-card">
+                    <div class="postcard more-card">
+                        <h4>더 보기</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <app-footer></app-footer>
+        </footer>
+        <!-- Vue.js -->
+        <script src="https://unpkg.com/vue"></script>
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <!-- Javascript -->
+        <script src="js/main.js"></script>
+        <script src="js/template.js"></script>
+    </body>
+</html>

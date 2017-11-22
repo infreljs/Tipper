@@ -1,0 +1,250 @@
+/* Vue.js */
+
+[v-cloak] {
+    display: none;
+}
+
+
+/* Font */
+
+.font-sm {
+    font-size: 12px;
+}
+
+.font-md {
+    font-size: 15px;
+}
+
+.font-lg {
+    font-size: 20px;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.gray {
+    color: #999999;
+}
+
+
+/* Edge */
+
+.soft-edge {
+    border-radius: 5px 5px 5px 5px;
+}
+
+.round-edge {
+    border-radius: 15px 15px 15px 15px;
+}
+
+.more-rounded-edge {
+    border-radius: 20px 20px 20px 20px;
+    margin: 0 10px;
+}
+
+
+/* Body */
+
+body {
+    background-color: white;
+    box-sizing: border-box;
+    white-space: nowrap !important;
+}
+
+
+/* Focus */
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+
+/* Top Navigation */
+
+.navbar {
+    padding: 0;
+    margin: 0 0 47px 0;
+}
+
+.navbar>div {
+    padding: 8px 16px;
+    height: 47px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #060636;
+    z-index: 99;
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-brand {
+    float: left;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    top: 35px;
+    right: -10px;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 200px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+}
+
+.dropdown-content a {
+    background-color: rgb(66, 66, 114);
+    color: #DDDDDD;
+    font-size: 12px;
+    padding: 12px 14px;
+    text-decoration: none;
+    display: block;
+    right: 90px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgb(98, 98, 144);
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown {
+    margin-top: 5px;
+    display: inline-block;
+    float: right;
+}
+
+.dropdown button {
+    color: white !important;
+    background-color: transparent;
+    border: 0;
+    font-size: 10pt;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdown button:hover {
+    color: #CCCCCC !important;
+}
+
+.dropdown-profile {
+    color: white;
+    background-color: rgb(96, 96, 255);
+    height: 40px;
+    padding: 6px 14px;
+}
+
+.topnav-margin {
+    margin-top: 47px;
+}
+
+.search-input {
+    width: 250px;
+    border: 1.2px;
+    border-style: solid;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    display: inline-block;
+    margin-top: 2px;
+    padding-left: 10px;
+    padding-right: 25px;
+    background-image: url("../img/search.png");
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+
+/* Sidebar */
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #03031e;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.sidebar .header {
+    font-size: 35px;
+    padding: 20px 4px 4px 20px;
+    color: #DDDDDD;
+    transition: 0.3s;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+.sidebar .list {
+    padding: 6px 6px 6px 20px;
+}
+
+#max-th {
+    width: 60%;
+    padding-left: 30px;
+}
+
+.sidebar hr {
+    margin-left: 20px;
+    background-color: #818181;
+    color: #818181;
+    height: 1px;
+    width: 190px;
+}
+
+.sidebar .close-button {
+    cursor: pointer;
+    padding: 13px 16px;
+}
+
+
+/* Footer */
+
+.footer-logo {
+    margin: 50px 0px 10px 0px;
+    width: 200px;
+}
+
+.copyright {
+    margin: 5px 0px 15px 0px;
+}
+
+
+/* Function */
+
+.show {
+    display: block;
+}
