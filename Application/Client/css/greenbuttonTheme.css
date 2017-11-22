@@ -47,11 +47,11 @@
 }
 
 
-#logo {
+.logo {
     width: 50%;
 }
 
-#button-login {
+.button-login {
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 5px;
@@ -61,39 +61,38 @@
     width: 100%;
     height: 50px;
 }
-#input-login {
+.input-login {
     border: none;
     border-bottom: 1px solid black;
     width: 100%;
 }
-#text-login {
+.text-login {
     font-size: 16px;    
 }
-#social-login {
-    color: white;
-    margin-left: 10px;
+.social-login {
+    color: white !important;
 }
-#link-login {
+.link-login {
     font-size: 16px;
     color: gray;
 }
-#link-login:hover {
+.link-login:hover {
     font-size: 16px;
     text-decoration: none;
     color: black;
 }
 
 
-#input-register {
+.input-register {
     border: none;
     border-bottom: 1px solid black;
     flex: 1;
 }
-#text-register {
+.text-register {
     flex: 1;
     font-size: 22px;
 }
-#button-register {
+.button-register {
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 5px;
@@ -103,7 +102,7 @@
     width: 100%;
     height: 50px;
 }
-#check-register {
+.check-register {
     background:url(../img/check-gray.png) no-repeat;
     cursor:pointer;
     border:none;
@@ -111,14 +110,14 @@
     height:32px;
     margin-left: 10px;
 }
-#check-register:hover {
+.check-register:hover {
     background:url(../img/check-black.png) no-repeat;
     cursor:pointer;
     border:none;
     width:32px;
     height:32px;
 }
-#warning-register {
+.warning-register {
     background:url(../img/question-gray.png) no-repeat;
     cursor:pointer;
     border:none;
@@ -126,33 +125,33 @@
     height:32px;
     margin-left: 10px;
 }
-#warning-register:hover {
+.warning-register:hover {
     background:url(../img/question-black.png) no-repeat;
     cursor:pointer;
     border:none;
     width:32px;
     height:32px;
 }
-#link-register {
+.link-register {
     font-size: 16px;
     color: gray;
 }
-#link-register:hover {
+.link-register:hover {
     font-size: 16px;
     text-decoration: none;
     color: black;
 }
 
 
-#input-account-1 {
+.input-account-1 {
     border: none;
     border-bottom: 1px solid black;
     width: 100%;
 }
-#text-account-1 {
+.text-account-1 {
     font-size: 14px;
 }
-#button-account-1 {
+.button-account-1 {
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 5px;
@@ -165,16 +164,16 @@
 
 
 
-#input-account-2 {
+.input-account-2 {
     flex: 1;
     border: none;
     border-bottom: 1px solid black;
 }
-#text-account-2 {
+.text-account-2 {
     flex: 1;
     font-size: 22px;
 }
-#button-account-2 {
+.button-account-2 {
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 5px;
@@ -184,7 +183,7 @@
     width: 100%;
     height: 50px;
 }
-#warning-account-2 {
+.warning-account-2 {
     background:url(../img/question-gray.png) no-repeat;
     cursor:pointer;
     border:none;
@@ -192,14 +191,14 @@
     height:32px;
     margin-left: 10px;
 }
-#warning-account-2:hover {
+.warning-account-2:hover {
     background:url(../img/question-black.png) no-repeat;
     cursor:pointer;
     border:none;
     width:32px;
     height:32px;
 }
-#check-account-2 {
+.check-account-2 {
     background:url(../img/check-gray.png) no-repeat;
     cursor:pointer;
     border:none;
@@ -207,35 +206,35 @@
     height:32px;
     margin-left: 10px;
 }
-#check-account-2:hover {
+.check-account-2:hover {
     background:url(../img/check-black.png) no-repeat;
     cursor:pointer;
     border:none;
     width:32px;
     height:32px;
 }
-#link-account-2 {
+.link-account-2 {
     margin: auto;
     font-size: 16px;
     color: gray;
 }
-#link-account-2:hover {
+.link-account-2:hover {
     margin: auto;
     font-size: 16px;
     text-decoration: none;
     color: black;
 }
 
-#text-byeforever {
+.text-byeforever {
     flex: 1;
     font-size: 22px;
 }
-#input-byeforever {
+.input-byeforever {
     border: none;
     border-bottom: 1px solid black;
     width: 100%;
 }
-#check-byeforever {
+.check-byeforever {
     background:url(../img/check-gray.png) no-repeat;
     cursor:pointer;
     border:none;
@@ -243,14 +242,14 @@
     height:32px;
     margin-left: 10px;
 }
-#check-byeforever:hover {
+.check-byeforever:hover {
     background:url(../img/check-black.png) no-repeat;
     cursor:pointer;
     border:none;
     width:32px;
     height:32px;
 }
-#button-byeforever {
+.button-byeforever {
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 5px;
@@ -261,7 +260,7 @@
     height: 50px;
 }
 
-#button-logout {
+.button-logout {
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 5px;
@@ -271,16 +270,16 @@
     width: 100%;
     height: 50px;
 }
-#text-logout {
+.text-logout {
     margin: auto;
     font-size: 22px;
 }
 
-#text-logout-success {
+.text-logout-success {
     font-size: 22px;
     margin-right: auto;
 }
-#button-logout-success {
+.button-logout-success {
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 5px;
@@ -290,7 +289,7 @@
     width: 100%;
     height: 50px;
 }
-#check-logout-success {
+.check-logout-success {
     background:url(../img/check-green.png) no-repeat;
     cursor:pointer;
     border:none;
