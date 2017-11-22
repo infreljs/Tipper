@@ -47,7 +47,6 @@
 }
 
 
-
 #logo {
     width: 50%;
 }
@@ -70,7 +69,19 @@
 #text-login {
     font-size: 16px;    
 }
-
+#social-login {
+    color: white;
+    margin-left: 10px;
+}
+#link-login {
+    font-size: 16px;
+    color: gray;
+}
+#link-login:hover {
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
 
 
 #input-register {
@@ -122,7 +133,15 @@
     width:32px;
     height:32px;
 }
-
+#link-register {
+    font-size: 16px;
+    color: gray;
+}
+#link-register:hover {
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
 
 
 #input-account-1 {
@@ -194,6 +213,17 @@
     border:none;
     width:32px;
     height:32px;
+}
+#link-account-2 {
+    margin: auto;
+    font-size: 16px;
+    color: gray;
+}
+#link-account-2:hover {
+    margin: auto;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
 }
 
 #text-byeforever {
@@ -270,13 +300,6 @@
     margin-right: 10px;
 }
 
-a {
-    color: gray;
-}
-a:hover {
-    text-decoration: none;
-    color: black;
-}
 input {
     margin: 0;
 }
