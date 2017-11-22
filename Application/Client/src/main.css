@@ -51,7 +51,6 @@
     margin: 0 10px;
 }
 
-
 /* Body */
 
 body {
@@ -200,6 +199,10 @@ textarea:focus {
 .sidebar .list {
     padding: 6px 6px 6px 20px;
 }
+#max-th{
+    width : 60%;
+    padding-left : 30px;
+}
 
 .sidebar hr {
     margin-left: 20px;
@@ -233,6 +236,7 @@ textarea:focus {
 .banner>div {
     display: table-cell;
     vertical-align: middle;
+    height : 400px;
 }
 
 .banner .header1 {
@@ -245,6 +249,22 @@ textarea:focus {
     font-weight: lighter;
     font-size: 20px;
     margin-bottom: 60px;
+}
+#board-title{
+    padding-top : 150px;
+    padding-bottom : 10px;
+    color : #060636;
+    font-weight: lighter;
+}
+#grey-info{
+    color : rgb(149,152,154);
+    padding: 5px;
+    font-size : 20px;
+    border-bottom : solid 1px rgb(149,152,154);
+}
+#grey-info a{
+    text-decoration: none;
+    color : rgb(149,152,154);
 }
 
 .btn-main {
@@ -340,6 +360,22 @@ textarea:focus {
 
 /* Postcard */
 
+.cards::-webkit-scrollbar-track {
+    background-color: #b46868;
+}
+
+.cards::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+
+.cards::-webkit-scrollbar-button {
+    background-color: #7c2929;
+}
+
+.cards::-webkit-scrollbar-corner {
+    background-color: black;
+}
+
 .postcard {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 20px;
@@ -359,7 +395,7 @@ textarea:focus {
 
 .postcard h3 {
     color: white;
-    font-family: "Roboto script=all rev=1", "Adobe Blank";
+    font-weight: lighter;
     z-index: 3;
     position: absolute;
     margin-top: -190px;
@@ -399,7 +435,7 @@ textarea:focus {
     height: 100%;
     background-color: green;
     filter: opacity(0.3) brightness(65%);
-    z-index: 55;
+    z-index: 0;
     position: absolute;
     margin-top: -190px;
 }
@@ -409,7 +445,7 @@ textarea:focus {
     height: 100%;
     background-color: white;
     filter: opacity(0.2) brightness(40%);
-    z-index: 55;
+    z-index: 0;
     position: absolute;
     margin-top: -190px;
 }
@@ -419,7 +455,7 @@ textarea:focus {
     height: 100%;
     background-color: #060636;
     filter: opacity(0.3) brightness(65%);
-    z-index: 55;
+    z-index: 0;
     position: absolute;
     margin-top: -190px;
 }
@@ -428,12 +464,11 @@ textarea:focus {
     width: 100%;
     height: 100%;
     background-color: white;
-    filter: opacity(0.2) brightness(40%)f;
-    z-index: 55;
+    filter: opacity(0.2) brightness(40%);
+    z-index: 0;
     position: absolute;
     margin-top: -190px;
 }
-
 
 /* Dashboard */
 
