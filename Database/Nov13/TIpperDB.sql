@@ -8,17 +8,17 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema tipper
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema tipper
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `tipper` DEFAULT CHARACTER SET utf8 ;
 USE `tipper` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`account`
+-- Table `tipper`.`account`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`account` (
   `id` VARCHAR(45) NOT NULL,
@@ -31,7 +31,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`post`
+-- Table `tipper`.`post`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`post` (
   `post` TEXT(5000) NOT NULL,
@@ -51,14 +51,14 @@ CREATE TABLE IF NOT EXISTS `tipper`.`post` (
   INDEX `fk_post_account1_idx` (`account_id` ASC),
   CONSTRAINT `fk_post_account1`
     FOREIGN KEY (`account_id`)
-    REFERENCES `mydb`.`account` (`id`)
+    REFERENCES `tipper`.`account` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`comment`
+-- Table `tipper`.`comment`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`comment` (
   `comment` TEXT(100) NOT NULL,
@@ -71,19 +71,19 @@ CREATE TABLE IF NOT EXISTS `tipper`.`comment` (
   INDEX `fk_comment_account1_idx` (`account_id` ASC),
   CONSTRAINT `fk_comment_post1`
     FOREIGN KEY (`post_id`)
-    REFERENCES `mydb`.`post` (`id`)
+    REFERENCES `tipper`.`post` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_comment_account1`
     FOREIGN KEY (`account_id`)
-    REFERENCES `mydb`.`account` (`id`)
+    REFERENCES `tipper`.`account` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`report`
+-- Table `tipper`.`report`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`report` (
   `reportId` INT NOT NULL,
@@ -96,12 +96,12 @@ CREATE TABLE IF NOT EXISTS `tipper`.`report` (
   INDEX `fk_report_account1_idx` (`account_id` ASC),
   CONSTRAINT `fk_report_post1`
     FOREIGN KEY (`post_id`)
-    REFERENCES `mydb`.`post` (`id`)
+    REFERENCES `tipper`.`post` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_report_account1`
     FOREIGN KEY (`account_id`)
-    REFERENCES `mydb`.`account` (`id`)
+    REFERENCES `tipper`.`account` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

@@ -21,8 +21,8 @@
         </nav>
         <div class="container">
             <h1 class="page-title">자유게시판</h1>
-            <div class="grey-board">
-                <table class="table table-hover grey-text">
+            <div id="freeboard" class="board">
+                <table class="table table-hover gray board-list">
                     <thead>
                         <tr>
                         <th id="max-th">제목</th>
@@ -61,8 +61,7 @@
                     </tbody>
                 </table>
                 <div class="pagenation-group text-center">
-                    <a href="#" class="pagenation">1</a>
-                    <a href="#" class="pagenation">2</a>
+                    <a v-for="page in pages" :href="page.url" class="pagenation" v-cloak>{{ page.id }}</a>
                 </div>
             </div>
         </div>
@@ -70,7 +69,7 @@
             <app-footer></app-footer>
         </footer>
         <!-- Vue.js -->
-        <script src="https://unpkg.com/vue"></script>
+        <script src="js/vue.js"></script>
         <!-- Jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <!-- Bootstrap -->
