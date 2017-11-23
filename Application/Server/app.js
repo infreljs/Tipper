@@ -16,6 +16,10 @@ var nodemailer = require('nodemailer');
 var smtpPool = require('nodemailer-smtp-pool');
 var randomstring = require('randomstring');
 var fs = require('fs');
+var multer = require('multer');
+var upload = multer({
+    dest: 'uploads/'
+});
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var app = express();
