@@ -97,7 +97,7 @@ textarea:focus {
 }
 
 .dropdown-content {
-    top: 35px;
+    top: 39px;
     right: -10px;
     display: none;
     position: absolute;
@@ -125,12 +125,12 @@ textarea:focus {
 }
 
 .dropdown {
-    margin-top: 3px;
     display: inline-block;
     float: right;
 }
 
 .dropdown button {
+    padding-top: 6px;
     color: white !important;
     background-color: transparent;
     border: 0;
@@ -143,11 +143,22 @@ textarea:focus {
     color: #CCCCCC !important;
 }
 
+.dropdown button:focus {
+    outline: 0;
+}
+
 .dropdown-profile {
     color: white;
     background-color: rgb(96, 96, 255);
     height: 40px;
-    padding: 6px 14px;
+    width: 100%;
+    padding-bottom: 2px;
+    display: table;
+}
+
+.dropdown-profile>div {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .topnav-margin {
@@ -210,11 +221,6 @@ textarea:focus {
 
 .sidebar .list {
     padding: 6px 6px 6px 20px;
-}
-
-#max-th {
-    width: 60%;
-    padding-left: 30px;
 }
 
 .sidebar hr {

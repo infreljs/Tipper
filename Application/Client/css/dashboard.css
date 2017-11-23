@@ -19,22 +19,30 @@
 .dashboard .header,
 .dashboard-admin .header {
     font-weight: bold;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
+}
+
+.box {
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .box-border-l {
-    padding-right: 25px;
-    border-right: solid 0.1px white;
+    border-left: solid 0.1px white;
 }
 
 .box-border-r {
-    padding-left: 25px;
-    border-left: solid 0.1px white;
+    border-right: solid 0.1px white;
+}
+
+.box-border-rm {
+    border-right: solid 0.1px white;
+    margin-right: -5px;
 }
 
 .dashboard .list,
 .dashboard-admin .list {
-    margin: 0 auto;
+    margin: 20px auto 0px auto;
     width: 750px;
 }
 
