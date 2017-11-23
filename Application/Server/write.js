@@ -10,22 +10,22 @@ var time = newDate.toFormat('YYYY-MM-DD HH24:MI:SS');
 app.use(express.static('../Client'));
 app.use(bodyParser.urlencoded({ extended : false}));
 
-exports.writeTipboard = function(req, res){
+exports.write = function(req, res){
     var conn = mysql.createConnection({
         host : "localhost",
         user : "root",
         password : "12341234",
-        database : "t_board"
+        database : "tipper"
     });
     
     conn.connect(function(err){
         if(err) throw err;
-        var id = req.body.id;
+        var id = "asdf";
         var title = req.body.title;
         var contents = req.body.contents;
-        var type = req.body.type;
+        var category = req.body.category;
         
-        var sql = "INSERT into `board` (author, title, contents, type, date) VALUES ('"+id+"', '"+title+"', '"+contents+"', '"+type+"', '"+time+"')";
+        var sql = "INSERT into `post` (user_id, title, contents, category, createTime) VALUES ('"+id+"', '"+title+"', '"+contents+"', '"+category+"', '"+time+"')";
         console.log(sql);
 
         conn.query(sql, function(err, result){
@@ -33,7 +33,12 @@ exports.writeTipboard = function(req, res){
                 res.json({status : 'f'});
                 throw err;
             }
-            res.json({status : 's'});
+            else if(result.affectedRows===1){
+                res.json({status : 's'});
+            }
+            else{
+                res.json({status : 'f'});
+            }
         });
     });
 };
