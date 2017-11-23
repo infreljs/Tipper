@@ -1,0 +1,46 @@
+/* Dashboard */
+
+.dashboard,
+.dashboard-admin {
+    background-color: rgb(149, 152, 154);
+    height: 450px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: table;
+}
+
+.dashboard>div,
+.dashboard-admin>div {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.dashboard .header,
+.dashboard-admin .header {
+    font-weight: bold;
+    margin-bottom: 80px;
+}
+
+.box-border-l {
+    padding-right: 25px;
+    border-right: solid 0.1px white;
+}
+
+.box-border-r {
+    padding-left: 25px;
+    border-left: solid 0.1px white;
+}
+
+.dashboard .list,
+.dashboard-admin .list {
+    margin: 0 auto;
+    width: 750px;
+}
+
+.dashboard .list>div,
+.dashboard-admin .list>div {
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+}

@@ -1,43 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/greenbuttonTheme.css">
-    <title>Login</title>
-</head>
-<body>
-    <div class="base-container">
-        <div class="div-center">
-            <div class="paddin mb-2"></div>
-            <div class="div-logo">
-                <img src="img/logo.png" alt="Tipper Logo" id="logo">        
-            </div>
-            <div class="form-group mt-5">
-                <div class="paddin">
-                    <input type="text" placeholder="아이디" id="input-login">  
+<html>
+    <head>
+        <title>Tipper</title>
+        <!-- Icon -->
+        <link rel="icon" href="img/Tipper-icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/account.css">
+        <link rel="stylesheet" type="text/css" href="css/template.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+            <sidebar></sidebar>
+        </nav>
+        <nav id="navbar" class="navbar">
+            <navbar></navbar>
+        </nav>
+        <div class="base-container">
+            <div class="div-center">
+                <div class="paddin mb-2"></div>
+                <div class="div-logo">
+                    <img src="img/logo.png" alt="Tipper Logo" class="logo">        
                 </div>
-                <div class="paddin">
-                    <input type="password" placeholder="비밀번호" id="input-login">
-                </div>
-                <div class="paddin">
-                    <button type="button" class="btn btn-success" id="button-login">로그인</button> 
-                </div>
-                <div class="paddin">
-                    <div style="margin:auto">
-                        <strong>
-                            <a href="" id="text-login">ID 찾기</a>  /  
-                            <a href="" id="text-login">PW 찾기</a>  /  
-                            <a href="register.html" id="text-login">회원가입</a>
-                        </strong>
+                <div class="form-group mt-5">
+                    <div class="paddin">
+                        <input type="text" placeholder="아이디" id="id" class="input-login">  
                     </div>
-                </div>                 
+                    <div class="paddin">
+                        <input type="password" placeholder="비밀번호" id="pw" class="input-login">
+                    </div>
+                    <div class="paddin">
+                        <button type="button" class="btn btn-success button-login" onclick="login()">로그인</button> 
+                    </div>
+                    <div class="paddin">
+                        <div style="margin:auto">
+                            <div class="account-breadcrumb">
+                                <a href="" class="link-login">ID 찾기</a>  /  
+                                <a href="" class="link-login">PW 찾기</a>  /  
+                                <a href="register.html" class="link-login">회원가입</a>
+                            </div>
+                            <a class="btn btn-block btn-social btn-sm btn-google social-login">
+                                <i class="fa fa-google"></i>
+                                Sign in with Google
+                            </a>
+                            <a class="btn btn-block btn-social btn-sm btn-facebook social-login">
+                                <i class="fa fa-facebook"></i>
+                                Sign in with Facebook
+                            </a>
+                        </div>
+                    </div>                 
+                </div>
             </div>
         </div>
-    </div>
-</body>
+        <!-- Vue.js -->
+        <script src="https://unpkg.com/vue"></script>
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <!-- Javascript -->
+        <script src="js/account.js"></script>
+        <script src="js/template.js"></script>
+    </body>
 </html>
