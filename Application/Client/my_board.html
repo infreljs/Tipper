@@ -3,36 +3,23 @@
     <head>
         <title>Tipper</title>
         <!-- Icon -->
-        <link rel="icon" href="../img/Tipper-icon.png">
+        <link rel="icon" href="img/Tipper-icon.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- Stylesheet -->
-        <link rel="stylesheet" type="text/css" href="main.css">
+        <link rel="stylesheet" type="text/css" href="css/board.css">
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="css/template.css">
     </head>
     <body>
         <nav id="sidebar" class="sidebar">
             <sidebar></sidebar>
         </nav>
-        <nav class="navbar">
-            <img src="../img/menu.png" class="navbar-brand" href="#" onclick='$("#sidebar").width(250);'>
-            <div class="col-xs-4">
-                <input id="search" class="search-input round-edge input-sm" type="text">
-            </div>
-            <div id="user-dropdown" class="dropdown">
-                <button v-cloak>{{ username }} 님</button>
-                <div class="dropdown-content">
-                    <div class="dropdown-profile">
-                        <span class="font-sm">{{ username }} <span class="gray">|</span> {{ point }} p</span>
-                    </div>
-                    <a href="#">포인트 확인</a>
-                    <a href="#">내가 쓴 꿀팁</a>
-                    <a href="#">프로필 수정</a>
-                    <a href="#">로그아웃</a>
-                </div>
-            </div>
+        <nav id="navbar" class="navbar">
+            <navbar></navbar>
         </nav>
         <div class="dashboard topnav-margin">
             <div>
@@ -68,43 +55,43 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                    <th class="text-center">제목</th>
-                    <th>가격</th>
-                    <th>추천</th>
-                    <th>비추천</th>
-                    <th>조회수</th>
-                    <th>분류</th>
-                    <th>포인트</th>
-                </tr>
+                        <th class="text-center">제목</th>
+                        <th>가격</th>
+                        <th>추천</th>
+                        <th>비추천</th>
+                        <th>조회수</th>
+                        <th>분류</th>
+                        <th>포인트</th>
+                    </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>당신이 생각한 바로 그 제목</td>
-                    <td>20000</td>
-                    <td>31</td>
-                    <td>44</td>
-                    <td>3021</td>
-                    <td>생활</td>
-                    <td>24341pt</td>
-                </tr>
-                <tr>
-                    <td>당신이 생각한 바로 그 제목</td>
-                    <td>20000</td>
-                    <td>31</td>
-                    <td>44</td>
-                    <td>3021</td>
-                    <td>생활</td>
-                    <td>24341pt</td>
-                </tr>
-                <tr>
-                    <td>당신이 생각한 바로 그 제목</td>
-                    <td>20000</td>
-                    <td>31</td>
-                    <td>44</td>
-                    <td>3021</td>
-                    <td>생활</td>
-                    <td>24341pt</td>
-                </tr>
+                    <tr>
+                        <td>당신이 생각한 바로 그 제목</td>
+                        <td>20000</td>
+                        <td>31</td>
+                        <td>44</td>
+                        <td>3021</td>
+                        <td>생활</td>
+                        <td>24341pt</td>
+                    </tr>
+                    <tr>
+                        <td>당신이 생각한 바로 그 제목</td>
+                        <td>20000</td>
+                        <td>31</td>
+                        <td>44</td>
+                        <td>3021</td>
+                        <td>생활</td>
+                        <td>24341pt</td>
+                    </tr>
+                    <tr>
+                        <td>당신이 생각한 바로 그 제목</td>
+                        <td>20000</td>
+                        <td>31</td>
+                        <td>44</td>
+                        <td>3021</td>
+                        <td>생활</td>
+                        <td>24341pt</td>
+                    </tr>
                 </tbody>
             </table>
             <div class="pagenation-group text-center">
@@ -113,10 +100,7 @@
             </div>
         </div>
         <footer>
-            <div class="container text-center">
-                <img class="footer-logo" src="../img/logo.png">
-                <p class="font-sm gray copyright">Copyright ⓒ 2017 Team. HackBomb all rights reserved.</p>
-            </div>
+            <app-footer></app-footer>
         </footer>
         <!-- Vue.js -->
         <script src="https://unpkg.com/vue"></script>
@@ -126,6 +110,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
         <!-- Javascript -->
-        <script src="js/main.js"></script>
+        <script src="js/board.js"></script>
+        <script src="js/template.js"></script>
     </body>
 </html>

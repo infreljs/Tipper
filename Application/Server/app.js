@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var write_tipboard = require('./write_tipboard');
+var write = require('./write');
 var editProfile = require('./editProfile');
 var send_authentication = require('./send_email_authentication');
 var tip_detail = require('./tip_deatil');
@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended : false}));
 app.listen(3333, function(){
     console.log('connected!');
 });
-app.post('/tipboard/write', write_tipboard.writeTipboard);
+app.post('/tipboard/write', write.write);
 app.post('/users/editProfile', editProfile.editProfile);
 app.post('/users/send_authentication', send_authentication.send_authentication);
 app.get('/tipboard/detail', tip_detail.tip_detail);
