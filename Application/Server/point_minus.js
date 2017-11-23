@@ -13,7 +13,7 @@ module.exports = function (conn) {
                 });
                 throw err;
             }
-            if (result.changedRows == 0) {
+            if (result.changedRows == 0) { 
                 res.json({
                     status: 'f'
                 });
