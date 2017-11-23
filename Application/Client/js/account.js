@@ -20,7 +20,6 @@ function login() {
 }
 
 function logout() {
-
     $.ajax({
         url: "",
         type: "POST",
