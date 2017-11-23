@@ -23,7 +23,7 @@ exports.editProfile = function(req, res){
             var new_pw = req.body.new_pw;
             var new_Nn = req.body.new_Nn;
             var new_Email = req.body.new_Email;
-            var sql = "update `user` set password='"+new_pw+"', nickname='"+new_Nn+"', email='"+new_Email+"' WHERE user_id = '"+id+"'";
+            var sql = "update `user` set pw='"+new_pw+"', nickname='"+new_Nn+"', email='"+new_Email+"' WHERE id = '"+id+"'";
             conn.query(sql, function(err, result){
                 if(err){
                     res.json({status : 'f'});

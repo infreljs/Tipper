@@ -302,46 +302,6 @@
     height: 50px;
 }
 
-.button-logout {
-    padding-bottom: 0;
-    padding-top: 0;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 0px;
-    width: 100%;
-    height: 50px;
-}
-
-.text-logout {
-    margin: auto;
-    font-size: 22px;
-}
-
-.text-logout-success {
-    font-size: 22px;
-    margin-right: auto;
-}
-
-.button-logout-success {
-    padding-bottom: 0;
-    padding-top: 0;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 0px;
-    width: 100%;
-    height: 50px;
-}
-
-.check-logout-success {
-    background: url(../img/check-green.png) no-repeat;
-    cursor: pointer;
-    border: none;
-    width: 32px;
-    height: 32px;
-    margin: auto;
-    margin-right: 10px;
-}
-
 input {
     margin: 0;
 }
