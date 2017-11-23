@@ -113,7 +113,7 @@
     height: 50px;
 }
 
-.check-register {
+.checkbox {
     background: url(../img/check-gray.png) no-repeat;
     cursor: pointer;
     border: none;
@@ -122,12 +122,30 @@
     margin-left: 10px;
 }
 
-.check-register:hover {
+.checkbox:hover {
     background: url(../img/check-black.png) no-repeat;
     cursor: pointer;
     border: none;
     width: 32px;
     height: 32px;
+}
+
+.valid-checkbox {
+    background: url(../img/check-gray.png) no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
+}
+
+.valid-checkbox.active {
+    background: url(../img/check-black.png) no-repeat;
+    cursor: pointer;
+    border: none;
+    width: 32px;
+    height: 32px;
+    margin-left: 10px;
 }
 
 .warning-register {
