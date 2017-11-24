@@ -1,7 +1,9 @@
-module.exports = function (nodemailer, randomstring) {
+module.exports = function (nodemailer, randomstring, smtpPool, session) {
     return function (req, res) {
+        var host = "naver";
+        var add = "dmlwlsdk07";
         var smtpTransport = nodemailer.createTransport(smtpPool({
-            service: 'Gmail',
+            service: "gmail",
             host: 'localhost',
             port: '465',
             tls: {
@@ -23,9 +25,9 @@ module.exports = function (nodemailer, randomstring) {
 
         var mailOpt = {
             from: 'tipp3rservice@gmail.com',
-            to: 'cluxebot@gmail.com',
+            to: add+'@'+host+'.com',
             subject: 'Tipper에서 온 인증코드 입니다.',
-            html: '<h1 style="color : skyblue">' + key_num + '</h1>'
+            html: '<div style="width : 900px; text-align : center; line-height : 200px;"><div style="background-color : black; opacity : 0.7"><h1 style="color : white; vertical-align : middle;">'+key_num+'</h1></div></div>'
         };
 
         smtpTransport.sendMail(mailOpt, function (err) {
@@ -35,9 +37,7 @@ module.exports = function (nodemailer, randomstring) {
                     status: 'f'
                 });
             } else {
-                res.json({
-                    key_num: key_num
-                });
+                req.session.key = key_num;
             }
             smtpTransport.close();
         });
