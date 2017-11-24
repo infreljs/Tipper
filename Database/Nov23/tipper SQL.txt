@@ -22,7 +22,8 @@ USE `tipper` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`user` (
   `id` VARCHAR(45) NOT NULL,
-  `pw` TEXT NOT NULL,
+  `pw` CHAR(172),
+  `salt` CHAR(88),
   `point` INT NULL DEFAULT 0,
   `createTime` TIMESTAMP NOT NULL,
   `nickname` VARCHAR(45) NOT NULL,
