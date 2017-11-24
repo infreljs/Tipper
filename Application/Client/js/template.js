@@ -1,7 +1,7 @@
 var username = "꼬꼬맷";
 var point = 100;
-var admin = true;
-var logined = true;
+var admin = false;
+var logined = false;
 
 $(document).ready(function () {
     $('.dropdown button').on('click', function () {
@@ -22,7 +22,7 @@ $(document).ready(function () {
 var sidebar_component = {
     template: `
         <div>
-            <img src="img/menu.png" class="close-button" onclick='$("#sidebar").width(0);'>
+            <img src="/menu.png" class="close-button" onclick='$("#sidebar").width(0);'>
             <h1 class="header"><a href="main.html">Tipper</a></h1>
             <hr>
             <a class="font-md list" href="freeboard.html">자유게시판</a>
@@ -43,7 +43,7 @@ var sidebar = new Vue({
 var navbar_component = {
     template: `
         <div>
-            <img src="img/menu.png" class="navbar-brand" href="#" onclick='$("#sidebar").width(250);'>
+            <img src="/menu.png" class="navbar-brand" href="#" onclick='$("#sidebar").width(250);'>
             <input id="search" class="search-input round-edge input-sm" type="text">
             <div v-if="logined" id="user-dropdown" class="dropdown">
                 <div>
@@ -61,7 +61,7 @@ var navbar_component = {
             </div>
             <div v-else id="user-dropdown" class="dropdown">
                 <div>
-                    <button onclick="location.href='login.html'">로그인</button>
+                    <button onclick="location.href='/login'">로그인</button>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@ var navbar_component = {
                 url: "#",
                 title: "내가 산 팁"
             }, {
-                url: "#",
+                url: "/logout",
                 title: "로그아웃"
             }],
             adminlist: [{

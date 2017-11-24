@@ -18,7 +18,7 @@ module.exports = function (conn) {
                 throw err;
             }
             res.json({
-                statis: 's'
+                status: 's'
             });
         });
     };

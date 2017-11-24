@@ -1,25 +1,37 @@
-module.exports = function (conn) {
+module.exports = function (conn, hasher) {
     return function (req, res) {
-        var dt = new Date();
-        var d = dt.toFormat('YYYY-MM-DD HH24:MI:SS');
-        var id = req.body.id;
-        var pw = req.body.pw;
-        var sql = "INSERT INTO `account` (id, pw, point, createTime, used) VALUES('" + id + "', '" + pw + "', '0', now(), '0')";
-        conn.query(sql, function (err, result) {
-            if (err) {
-                res.json({
-                    status: 'f'
-                });
-                throw err;
-            } else if (result.affectedRows === 1) {
-                res.json({
-                    status: 's'
-                });
-            } else {
-                res.json({
-                    status: 'f'
-                });
-            }
-        })
+        hasher({
+            password: req.body.pw
+        }, function (err, pass, salt, hash) {
+            var user = {
+                id: 'local:' + req.body.user_id,
+                pw: hash,
+                nickname: req.body.nickname,
+                salt: salt,
+                email: req.body.email,
+                createTime: require('./now')()
+            };
+            var sql = "INSERT INTO `user` SET ?";
+            conn.query(sql, user, function (err, result) {
+                if (err) {
+                    res.json({
+                        status: 'err'
+                    });
+                    throw err;
+                } else if (result.affectedRows === 1) {
+                    req.login(user, function (err) {
+                        req.session.save(function () {
+                            res.json({
+                                status: 's'
+                            });
+                        });
+                    });
+                } else {
+                    res.json({
+                        status: 'f'
+                    });
+                }
+            });
+        });
     };
 }
