@@ -56,8 +56,7 @@
 
 body {
     background-color: white;
-    box-sizing: border-box;
-    white-space: nowrap !important;
+    box-sizing: border-box; 
 }
 
 
