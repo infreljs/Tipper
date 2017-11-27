@@ -131,3 +131,10 @@
     vertical-align: middle;
     font-size: 18px;
 }
+
+.payed_lists{
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    height : 200px;
+}
