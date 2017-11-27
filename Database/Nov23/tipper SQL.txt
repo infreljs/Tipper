@@ -24,13 +24,13 @@ CREATE TABLE IF NOT EXISTS `tipper`.`user` (
   `id` VARCHAR(45) NOT NULL,
   `pw` CHAR(172),
   `salt` CHAR(88),
-  `point` INT NULL DEFAULT 0,
+  `point` INT NOT NULL DEFAULT 0,
   `createTime` TIMESTAMP NOT NULL,
   `nickname` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  `buyingAmount` INT NULL DEFAULT 0,
-  `reportCount` INT NULL DEFAULT 0,
-  `admin` INT NULL DEFAULT 0,
+  `buyingAmount` INT NOT NULL DEFAULT 0,
+  `reportCount` INT NOT NULL DEFAULT 0,
+  `admin` TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -45,7 +45,6 @@ CREATE TABLE IF NOT EXISTS `tipper`.`tip` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `price` INT NOT NULL,
   `title` TINYTEXT NOT NULL,
-  `like` INT NULL DEFAULT 0,
   `view` INT NULL DEFAULT 0,
   `salesVolume` INT NULL DEFAULT 0,
   `rank` INT NULL DEFAULT 0,
@@ -64,7 +63,7 @@ ENGINE = InnoDB;
 -- Table `tipper`.`tipComment`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`tipComment` (
-  `comment` TEXT(300) NOT NULL,
+  `comment` TEXT NOT NULL,
   `createTime` TIMESTAMP NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
@@ -126,6 +125,29 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
+-- Table `tipper`.`tipLike`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tipper`.`tipLike` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` VARCHAR(45) NOT NULL,
+  `tip_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_like_tip1_idx` (`tip_id` ASC),
+  INDEX `fk_like_user1_idx` (`user_id` ASC),
+  CONSTRAINT `fk_like_tip1`
+    FOREIGN KEY (`tip_id`)
+    REFERENCES `tipper`.`tip` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_like_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `tipper`.`user` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `tipper`.`payedList`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`payedList` (
@@ -150,9 +172,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tipper`.`freeBoard`
+-- Table `tipper`.`freeboard`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tipper`.`freeBoard` (
+CREATE TABLE IF NOT EXISTS `tipper`.`freeboard` (
   `contents` TEXT NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
   `createTime` TIMESTAMP NOT NULL,
@@ -162,8 +184,8 @@ CREATE TABLE IF NOT EXISTS `tipper`.`freeBoard` (
   `title` TINYTEXT NOT NULL,
   `user_id` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_freeBoard_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_freeBoard_user1`
+  INDEX `fk_freeboard_user1_idx` (`user_id` ASC),
+  CONSTRAINT `fk_freeboard_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `tipper`.`user` (`id`)
     ON DELETE CASCADE
@@ -172,23 +194,23 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tipper`.`freeBoardComment`
+-- Table `tipper`.`freeboardComment`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tipper`.`freeBoardComment` (
+CREATE TABLE IF NOT EXISTS `tipper`.`freeboardComment` (
   `comment` TEXT(300) NOT NULL,
   `createTime` TIMESTAMP NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
-  `freeBoard_id` INT NOT NULL,
+  `post_id` INT NOT NULL,
   `user_id` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_freeBoardComment_freeBoard1_idx` (`freeBoard_id` ASC),
-  INDEX `fk_freeBoardComment_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_freeBoardComment_freeBoard1`
-    FOREIGN KEY (`freeBoard_id`)
-    REFERENCES `tipper`.`freeBoard` (`id`)
+  INDEX `fk_freeboardComment_freeboard1_idx` (`post_id` ASC),
+  INDEX `fk_freeboardComment_user1_idx` (`user_id` ASC),
+  CONSTRAINT `fk_freeboardComment_freeboard1`
+    FOREIGN KEY (`post_id`)
+    REFERENCES `tipper`.`freeboard` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_freeBoardComment_user1`
+  CONSTRAINT `fk_freeboardComment_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `tipper`.`user` (`id`)
     ON DELETE CASCADE
@@ -197,40 +219,40 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tipper`.`freeBoardFile`
+-- Table `tipper`.`freeboardFile`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tipper`.`freeBoardFile` (
+CREATE TABLE IF NOT EXISTS `tipper`.`freeboardFile` (
   `fileLink` TINYTEXT NOT NULL,
-  `freeBoard_id` INT NOT NULL,
-  INDEX `fk_freeBoardFile_freeBoard1_idx` (`freeBoard_id` ASC),
-  CONSTRAINT `fk_freeBoardFile_freeBoard1`
-    FOREIGN KEY (`freeBoard_id`)
-    REFERENCES `tipper`.`freeBoard` (`id`)
+  `post_id` INT NOT NULL,
+  INDEX `fk_freeboardFile_freeboard1_idx` (`post_id` ASC),
+  CONSTRAINT `fk_freeboardFile_freeboard1`
+    FOREIGN KEY (`post_id`)
+    REFERENCES `tipper`.`freeboard` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `tipper`.`freeBoardReport`
+-- Table `tipper`.`freeboardReport`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tipper`.`freeBoardReport` (
+CREATE TABLE IF NOT EXISTS `tipper`.`freeboardReport` (
   `reportId` INT NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
   `reportTime` TIMESTAMP NOT NULL,
   `user_id` VARCHAR(45) NOT NULL,
-  `freeBoard_id` INT NOT NULL,
+  `post_id` INT NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_freeBoardReport_user1_idx` (`user_id` ASC),
-  INDEX `fk_freeBoardReport_freeBoard1_idx` (`freeBoard_id` ASC),
-  CONSTRAINT `fk_freeBoardReport_user1`
+  INDEX `fk_freeboardReport_user1_idx` (`user_id` ASC),
+  INDEX `fk_freeboardReport_freeboard1_idx` (`post_id` ASC),
+  CONSTRAINT `fk_freeboardReport_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `tipper`.`user` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_freeBoardReport_freeBoard1`
-    FOREIGN KEY (`freeBoard_id`)
-    REFERENCES `tipper`.`freeBoard` (`id`)
+  CONSTRAINT `fk_freeboardReport_freeboard1`
+    FOREIGN KEY (`post_id`)
+    REFERENCES `tipper`.`freeboard` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
