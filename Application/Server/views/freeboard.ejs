@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ./head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ./sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ./navbar %>
+        </nav>
+        <div class="container">
+            <h1 class="page-title">자유게시판</h1>
+            <div class="board">
+                <table class="table table-hover gray board-list">
+                    <thead>
+                        <tr>
+                            <th id="max-th">제목</th>
+                            <th>추천</th>
+                            <th>조회수</th>
+                            <th>작성자</th>
+                            <th>댓글</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+<% for (var i=0; i<freeboard.list.length; i++) { %>
+                        <tr class="post" onclick="location.href='/freeboard/post/<%= freeboard.list[i].id %>'">
+                            <td id="max-th"><%= freeboard.list[i].title %></td>
+                            <td><%= freeboard.list[i].likeNum %></td>
+                            <td><%= freeboard.list[i].viewNum %></td>
+                            <td><%= freeboard.list[i].author %></td>
+                            <td><%= freeboard.list[i].commentNum %></td>
+                        </tr>
+<% } %>
+                    </tbody>
+                </table>
+                <div class="pagenation-group text-center">
+<% for (var i=freeboard.page.firstpage; i<freeboard.page.firstpage+5; i++) { %>
+                    <a href="/freeboard?page=<%= i %>" class="pagenation<%= (i > freeboard.page.maxpage)?(' disabled'):('') %>"><%= i %></a>
+<% } %>
+                </div>
+            </div>
+        </div>
+        <footer>
+<% include ./footer %>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<img src="/img/menu.png" class="navbar-brand" href="#" onclick='$("#sidebar").width(250);'>
+<input id="search" class="search-input round-edge input-sm" type="text">
+<% if(user.logined) { %>
+<div id="user-dropdown" class="dropdown">
+    <button><%= user.username %> 님</button>
+    <div class="dropdown-content">
+        <div class="dropdown-profile">
+            <div>
+                <span class="font-sm"><%= user.username %>
+                    <span class="gray">|</span> <%= user.point %> p</span>
+            </div>
+        </div>
+        <a href="/mypage">프로필</a>
+        <a href="/users/editinfo">내 정보 수정</a>
+        <a href="/mypage">프로필</a>
+        <a href="/users/logout">로그아웃</a>
+<% if(user.admin) { %>
+        <a href="/admin">Admin Page</a>
+<% } %>
+    </div>
+</div>
+<% } else { %>
+<div id="user-dropdown" class="dropdown">
+    <div>
+        <button onclick="location.href='/users/login'">로그인</button>
+    </div>
+</div>
+<% } %>

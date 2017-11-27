@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ./head %>
+        <link rel="stylesheet" type="text/css" href="/css/account.css">
+        <script src="/js/account.js"></script>
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ./sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ./navbar %>
+        </nav>
+        <div class="base-container">
+            <div class="div-center">
+                <div class="paddin mb-2"></div>
+                <div class="div-logo">
+                    <img src="/img/logo.png" alt="Tipper Logo" class="logo">        
+                </div>
+                <div class="form-group mt-5">
+                    <div class="paddin">
+                        <div class="text-register">
+                            개인정보 수집에 동의합니다.
+                        </div>
+                        <div style="height:33px; display:table">
+                            <div style="height:100%; display: table-cell; vertical-align: bottom">
+                                <a href="" class="link-account">자세히보기</a>
+                            </div>
+                        </div>
+                        <div style="float:right">
+                            <input type="button" class="checkbox" value="">
+                        </div>
+                    </div>
+                    <form id="register-form" action="/users/register" method="post">
+                        <div class="paddin">
+                            <input type="text" placeholder="아이디" id="id" class="input-account" name="id" onkeyup="checkIDDup();" required>
+                            <div style="float:right">
+                                <input type="button" id="id-check" class="valid-checkbox" value="">
+                            </div>
+                        </div>
+                        <div class="paddin">
+                            <input type="text" placeholder="닉네임" id="nickname" class="input-account" name="nickname" required>
+                        </div>
+                        <div class="paddin">
+                            <input type="text" placeholder="비밀번호" id="pw" class="input-account" name="pw" onkeyup="checkPW(); checkPWRetype();" required>
+                            <div style="float:right">
+                                <input type="button" class="question-mark" value="">
+                            </div>
+                            <div style="float:right">
+                                <input type="button" id="pw-check" class="valid-checkbox" value="">
+                            </div>
+                        </div>
+                        <div class="paddin">
+                            <input type="text" placeholder="비밀번호 재확인" id="pw-re" class="input-account" onkeyup="checkPWRetype();" required>
+                            <div style="float:right">
+                                <input type="button" id="pw-re-check" class="valid-checkbox" value="">
+                            </div>
+                        </div>
+                        <div class="paddin">
+                            <input type="email" placeholder="이메일" id="email" class="input-account" name="email" required>
+                            <div class="text-account" style="margin-left:10px;">@</div>
+                            <select style="margin-left:10px;" id="email-suffix" name="email_suffix" required>
+                                <option value="gmail.com">gmail.com</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="hanmail.net">hanmail.net</option>
+                            </select>
+                        </div>
+                    </form>
+                    <div class="paddin">
+                        <div class="text-register">
+                            이메일로 알림을 수신하겠습니다.    
+                        </div>
+                        <div style="float:right">
+                            <input type="button" class="checkbox" value="">
+                        </div>
+                    </div>
+                    <div class="paddin">
+                        <button type="button" class="btn-captcha">captcha</button>
+                    </div>
+                    <div class="paddin">
+                        <button type="button" class="btn btn-success button-account" onclick="register();">회원가입</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

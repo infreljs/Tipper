@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ./head %>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ./sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ./navbar %>
+        </nav>
+        <section class="banner text-center topnav-margin">
+            <div>
+                <p class="header1">오류가 발생했습니다!</p>
+                <p class="header2"><%= error %></p>
+                <button class="btn btn-outline-success btn-main soft-edge" onclick='location.href="/"'>돌아가기</button>
+            </div>
+        </section>
+        <footer>
+<% include ./footer %>
+        </footer>
+    </body>
+</html>
