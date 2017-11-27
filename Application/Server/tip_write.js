@@ -1,15 +1,14 @@
 module.exports = function (conn) {
     return function (req, res) {
+        if (err) throw err;
+        var id = req.body.id;
+        var title = req.body.title;
+        var contents = req.body.contents;
         var type = req.body.type;
-        var id = req.body.user_id;
-        var add_point;
-        if (type == 'w') {
-            add_point = 10;
-        } else if (type == 's') {
-            add_point = req.body.add_point;
-        }
-        var sql = "UPDATE `user` SET point=point+" + add_point + " WHERE user_id = '" + id + "'";
+
+        var sql = "INSERT into `board` (author, title, contents, type, date) VALUES ('" + id + "', '" + title + "', '" + contents + "', '" + type + "', '" + time + "')";
         console.log(sql);
+
         conn.query(sql, function (err, result) {
             if (err) {
                 res.json({
