@@ -41,26 +41,41 @@
                 </div>
             </div>
             <div class="post-info">
-                <div class="post-profile" href="#">
-                    <img src="img/Tipper-Icon.png">
+                <div class="post-profile">
                     <span class="profile-desc">
-                        <div class="profile-name">CRJW</div>
-                        <div class="profile-intro">자기소개가 업읍니다.</div>
+                        CRJW
                     </span>
                 </div>
                 <div class="post-stat">
-                    <div>
-                        <i class="material-icons" style="font-size:30px">favorite</i><div class="stat-data">123</div>
+                    <div class="post-stat-content">
+                        <div class="fav-koko">
+                            <i class="material-icons fav" style="font-size:30px">favorite</i>
+                            <span class="num">123</span>
+                        </div>
+                        <div class="eye-koko">
+                            <i class="material-icons rm-eye" style="font-size:30px">remove_red_eye</i> 
+                            <span class="num-eye">123</span>
+                        </div>
                     </div>
-                    <div>
-                        <i class="material-icons" style="font-size:30px">remove_red_eye</i><div class="stat-data">123</div>       
-                    </div>                
                 </div>
             </div>
             <div class="gray-info"></div>
-            <textarea class="input-comment" placeholder="댓글을 입력해 보세요."></textarea>
-            <button class="comment-btn btn btn-outline-success" href="/">확인</button>
+            <div class="comment">
+                <textarea class="input-comment" placeholder="댓글을 입력해 보세요."></textarea>
+                <button class="comment-btn btn btn-outline-success" href="/">확인</button>
+            </div>
             <div class=gray-info></div>
+            <div class="comments-list">
+                <div class="writer_info row">
+                    <span id="comment_writer" class="col-xs">CRJW</span>
+                    <span id="comment_date" class="col-xs">11.10 13:21</span>
+                </div>
+                <div class="comment_text_head">
+                    <span id="comment_text">에베베베베벱베ㅔㅂ베베베베베베에베베베베베ㅔ베ㅔ베베베ㅔㅔ베베베베베ㅔ베베ㅔ베벱베벱베베베베베베ㅔ벱베ㅔㅔㅂ베베베베</span>
+                </div>
+                <a href="/" id="call">신고</a>
+                <div class="gray-info-comment"></div>
+            </div>
         </div>
         <footer>
             <app-footer></app-footer>
