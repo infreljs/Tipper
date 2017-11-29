@@ -64,24 +64,27 @@
 .payed_list{
     width: 100%;
     text-align: center;
-    margin-bottom: 250px;
     margin-top: 40px;
+    height: 200px;
 }
 
 .contents{
-    width: 40%;
+    margin-top: 20px;
+    width: 40% !important;
     height : 200px;
     float: left;
     margin-left: 9%;
     box-shadow: -5px 7px 4px -3px #afadad;
     cursor: pointer;
     transition:.3s;
+    
 }
 
 .contents-right{
+    margin-top: 20px;
     float: right;
     box-shadow: -5px 7px 4px -3px #afadad;
-    width: 40%;
+    width: 40% !important;
     height : 200px;
     margin-right: 9%;
     cursor: pointer;
@@ -107,7 +110,7 @@
 }
 
 .detail_text{
-    word-break: break-all;
+    word-break: break-all !important;
 }
 
 #writer{
@@ -128,6 +131,7 @@
     height : 100%;
     background-color : rgb(149, 152, 154);
     line-height: 200px;
+    text-align: center;
 }
 
 #tip_price{

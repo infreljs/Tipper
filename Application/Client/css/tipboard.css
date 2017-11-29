@@ -58,66 +58,50 @@
     margin-bottom: -20px;
 }
 
-.post-stat{
-    float: right;
-    height: 100%;
-    width: 30%;
-    text-align: right;
-    
-}
-
-.fav{
-    margin-top: 50px;
-    float:right;
-    color: rgb(175, 173, 173);
-}
-
-.rm-eye{
-    float:right;
-    color: rgb(175, 173, 173);
-}
-
-.fav-koko{
-    width: 100%;
-    height : 50%;
-}
-
-.eye-koko{
-    width: 100%;
-    height : 50%;
-}
-
-.rm-eye{
-    margin-top: 10px;
-}
-
-.num{
-    float: right;
-    margin-top: 50px;
-    margin-right: 10px;
-    font-size: 20px;
-    color: rgb(175, 173, 173);
-}
-
-.num-eye{
-    float: right;
-    margin-top: 10px;
-    margin-right: 10px;
-    font-size: 20px;
-    color: rgb(175, 173, 173);
-}
-
 .post-profile{
     width : 70%;
     height: 100%;
     display : inline-block;
     line-height: 150px;
     white-space: nowrap;
+    float: left;
 }
 
-.post-stat-content{
+#category-text{
+    font-size: 18px;
+    color: white;
+}
+
+.post-category{
     width: 100%;
+    line-height : 60px;
+    text-align: center;
+    margin-top: 35px;
+    height: 60px;
+    background-color: rgb(90, 87, 87);
+    border-radius: 10px;
+}
+
+.fav-koko{
+    float : right;
     height: 100%;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.num{
+    vertical-align: top;
+    font-size: 20px;
+}
+
+.eye-koko{
+    float: right;
+    margin-top: 25px;
+}
+
+.post-stat{
+    float : left;
+    width: 30%;
 }
 
 .profile-desc{
