@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+        <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="/css/payed.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div class="container">
+            <h1 class="page-title">팁 게시판</h1>
+            <div class="board">
+<% for (var i=0; i<post.list.length; i++) { %>
+                <div class="contents col-xs" onclick="location.href='/tipboard/post/<%= tipboard.list[i].id %>'">
+                    <div class="description">
+                        <span id="title"><%= post.list[i].title %></span>
+                        <div class="detail">
+                            <span class="detail_text"><%= post.list[i].text %></span>
+                        </div>
+                        <span id="writer">By <%= post.list[i].author %></span>
+                    </div>
+                    <div class="image"></div>
+                    <div class="price">
+                        <span id="tip_price"><%= post.list[i].price %>P</span>
+                    </div>
+                </div>
+<% } %>
+                <div style="text-align: right; padding-right: 60px;">
+                    <a href="/tipboard/write" class="btn btn-outline-success">팁 작성</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+<% include ../component/footer %>
+        </footer>
+    </body>
+</html>

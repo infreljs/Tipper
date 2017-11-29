@@ -54,100 +54,105 @@
 
 .post-info {
     height: 160px;
+    width: 100%;
+    margin-bottom: -20px;
 }
 
 .post-stat {
-    height: 150px;
-    width: 15%;
-    padding: 20px 0px 20px 0px;
-    display: inline-block;
-    white-space: nowrap;
-    vertical-align: middle;
+    float: right;
+    height: 100%;
+    width: 30%;
+    text-align: right;
 }
 
-.post-stat i {
-    padding-top: 5px;
-    position: absolute;
-    display: inline-block;
-    white-space: nowrap;
-    color: grey;
-    height: 25px;
+.fav {
+    margin-top: 50px;
+    float: right;
+    color: rgb(175, 173, 173);
     cursor: pointer;
 }
 
-.post-stat .stat-data {
-    z-index: -1;
-    position: absolute;
-    padding-left: 40px;
-    white-space: pre-wrap;
-    display: inline-block;
-    height: 25px;
-    font-size: 25px;
-    color: grey;
+.fav.liked {
+    color: hotpink;
 }
 
-.post-stat>div {
-    height: 30px;
-    text-align: right;
+.rm-eye {
+    float: right;
+    color: rgb(175, 173, 173);
+}
+
+.fav-koko {
+    width: 100%;
+    height: 50%;
+}
+
+.eye-koko {
+    width: 100%;
+    height: 50%;
+}
+
+.rm-eye {
+    margin-top: 10px;
+}
+
+.num {
+    float: right;
+    margin-top: 50px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgb(175, 173, 173);
+}
+
+.num-eye {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgb(175, 173, 173);
 }
 
 .post-profile {
     width: 70%;
+    height: 100%;
     display: inline-block;
-    white-space: nowrap;
-    margin: 30px 5px 30px 0px;
+    line-height: 150px;
 }
 
-.post-profile>img {
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    position: absolute;
+.post-stat-content {
+    width: 100%;
+    height: 100%;
 }
 
 .profile-desc {
-    padding-left: 100px;
-    padding-top: 15px;
-    justify-content: center;
-    height: 100px;
+    float: left;
+    vertical-align: middle;
+    height: 100%;
     text-align: left;
-    margin: auto 0px auto 20px;
     white-space: nowrap;
     display: inline-block;
-}
-
-.profile-desc>.profile-name {
     font-size: 32px;
     color: #060636;
 }
 
-.profile-desc>.profile-intro {
-    font-size: 15spx;
-    line-height: 15px;
-    color: grey;
-    font-weight: lighter;
-}
-
 .gray-info {
-    display: flex;
-    justify-content: space-between;
     color: rgb(149, 152, 154);
-    padding: 5px;
+    padding-bottom: 10px;
     font-size: 20px;
     border-bottom: solid 1px rgb(149, 152, 154);
 }
 
-.gray-info>a {
+.gray-info>button {
     text-decoration: none;
+    cursor: pointer;
+    padding: 0;
+    border: 0;
     color: rgb(149, 152, 154);
     white-space: nowrap;
     display: inline-block;
 }
 
-.gray-info>.report-post {
-    white-space: nowrap;
-    display: inline-block;
-    text-align: right;
+.gray-info>button:focus {
+    outline: 0;
 }
 
 .btn-main {
@@ -242,13 +247,17 @@
     width: 100%;
     height: 140px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     padding: 15px;
     color: grey;
 }
 
 .input-comment::-webkit-scrollbar {
     display: none;
+}
+
+.comment-write {
+    /* text-align: right; */
 }
 
 .comment-btn {
@@ -302,4 +311,79 @@
     cursor: pointer;
     font-size: 25px;
     color: rgb(149, 152, 154);
+}
+
+.comments {
+    margin-top: 50px;
+}
+
+.comment-list {
+    display: none;
+}
+
+.comment-list.show {
+    display: block;
+}
+
+.comment {
+    margin-top: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgb(172, 169, 169);
+}
+
+.comment-author {
+    font-style: bold;
+    font-size: 23px;
+    line-height: 20px;
+}
+
+.comment-date,
+.comment-edited {
+    margin-left: 20px;
+    vertical-align: baseline;
+    color: rgb(172, 169, 169);
+}
+
+.writer_info {
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.comment_text_head {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+.report-post {
+    margin-top: 3px;
+    color: rgb(149, 152, 154);
+    float: right;
+    text-align: right;
+}
+
+.call {
+    float: right;
+    cursor: pointer;
+    color: rgb(172, 169, 169);
+    padding-left: 2px;
+    border: 0;
+}
+
+.call:hover {
+    text-decoration: none;
+    color: rgb(120, 139, 139);
+}
+
+.call:focus {
+    outline: 0;
+}
+
+.gray-info-comment {
+    justify-content: space-between;
+    color: rgb(149, 152, 154);
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: solid 1px rgb(149, 152, 154);
 }

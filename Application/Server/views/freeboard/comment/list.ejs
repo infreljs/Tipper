@@ -1,0 +1,23 @@
+<div class="gray-info">
+    <button onclick="$('#comment-list').toggleClass('show');">댓글 <%= post.comment.length %>개</button>
+</div>
+<div id="comment-list" class="comment-list show">
+<% for (var i=0; i<post.comment.length; i++) { %>
+    <div class="comment">
+        <div class="writer_info row">
+            <span class="comment-author" class="col-xs"><%= post.comment[i].author %></span>
+            <span class="comment-date" class="col-xs"><%= post.comment[i].createTime %></span>
+            <span class="comment-edited" class="col-xs"><%= (post.comment[i].edited)?('수정됨'):('') %></span>
+        </div>
+        <div class="comment_text_head">
+            <span class="comment-text"><%= post.comment[i].comment %></span>
+        </div>
+    <% if (post.comment[i].author == user.username) { %>
+        <button class="call" onclick="commentEdit(<%= post.id %>, <%= post.comment[i].id %>);">수정</button>
+        <button class="call" onclick="commentDelete(<%= post.id %>, <%= post.comment[i].id %>);">삭제</button>
+    <% } %>
+        <!-- <button class="call" onclick="commentReport(<%= post.comment[i].id %>);">신고</button> -->
+        <div class="gray-info-comment"></div>
+    </div>
+<% } %>
+</div>

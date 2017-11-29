@@ -1,6 +1,6 @@
 module.exports = function () {
     return function (req, res) {
-        res.render('main', {
+        res.render('index', {
             user: (req.isAuthenticated()) ? ({
                 logined: true,
                 admin: req.user.admin,

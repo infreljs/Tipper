@@ -1,157 +1,35 @@
-module.exports = function () {
+module.exports = function (conn) {
     return function (req, res) {
-        res.render('admin', {
-            user: {
-                logined: req.isAuthenticated(),
-                admin: req.user.admin,
-                username: req.user.nickname,
-                point: req.user.point
-            },
-            admin: {
-                adminType: "게시글 관리자",
-                tipNum: 100,
-                fbPostNum: 100
-            }
+        switch (req.user.admin) {
+            case 1:
+                adminType = "자유게시판 관리자";
+                break;
+            case 2:
+                adminType = "팁 게시판 관리자";
+                break;
+            case 3:
+                adminType = "유저 관리자";
+                break;
+            case 0:
+            default:
+                res.redirect('/');
+                return;
+        }
+        var sql = "SELECT (SELECT COUNT(id) FROM tip) AS tipNum, (SELECT COUNT(id) FROM freeboard) AS postNum FROM DUAL";
+        conn.query(sql, function (err, results) {
+            res.render('admin', {
+                user: {
+                    logined: req.isAuthenticated(),
+                    admin: req.user.admin,
+                    username: req.user.nickname,
+                    point: req.user.point
+                },
+                admin: {
+                    adminType: adminType,
+                    tipNum: results[0].tipNum,
+                    postNum: results[0].postNum
+                }
+            });
         });
     };
-};
-
-
-
-var dashboard_admin = {
-    userName: 'Comet',
-    postNums: 100,
-    earnedPoints: 10000,
-    totalPoints: 100,
-    recommendNums: 100,
-    userGrade: "Silver"
-};
-
-var dashboard_admin = {
-    adminType: "게시글 관리자",
-    adminName: 'Comet',
-    tipNums: 100,
-    fbPostNums: 100,
-    postList: [{
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }]
-};
-
-var my_postlist = {
-    postList: [{
-        onclick: "location.href='?id=" + 1 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 2 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 3 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 4 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 5 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }],
-    pages: [{
-        url: "?page=1",
-        id: 1
-    }, {
-        url: "?page=2",
-        id: 2
-    }, {
-        url: "?page=3",
-        id: 3
-    }, {
-        url: "?page=4",
-        id: 4
-    }]
-};
-
-var postlist = {
-    postList: [{
-        onclick: "location.href='?id=" + 1 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 2 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 3 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 4 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }, {
-        onclick: "location.href='?id=" + 5 + "'",
-        title: "Title",
-        price: 100,
-        recommends: 100,
-        views: 1000,
-        category: "생활",
-        earnedPoints: 10000
-    }],
-    pages: [{
-        url: "?page=1",
-        id: 1
-    }, {
-        url: "?page=2",
-        id: 2
-    }, {
-        url: "?page=3",
-        id: 3
-    }, {
-        url: "?page=4",
-        id: 4
-    }]
 };

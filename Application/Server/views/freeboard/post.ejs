@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+        <script src="/js/freeboard.js"></script>        
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div class="post-title">
+            <h1><%= post.title %></h1>
+        </div>
+        <div class="post-content">
+            <div class="gray-info">
+                <div style="display: inline-block; width:30%; text-align: right;">
+                    <%= post.date %>
+                </div>
+<% if (user.username === post.author) { %>
+                <div style="display: inline-block; width:70%; text-align: right; padding-right: 5px; margin-bottom: -10px;">
+                    <span class="call" style="margin-left: 10px;" onclick="postDelete(<%= post.id %>);">삭제</span>
+                    <span class="call" onclick="location.href='/freeboard/edit/<%= post.id %>'">수정</span>
+                </div>
+<% } %>
+            </div>
+            <div class="post-data">
+                <%- post.content %>
+            </div>
+            <div class="gray-info"></div>
+            <div class="post-info">
+                <div class="post-profile">
+                    <span class="profile-desc">
+                        <%= post.author %>
+                    </span>
+                </div>
+                <div class="post-stat">
+                    <div class="post-stat-content">
+                        <div class="fav-koko">
+                            <i id="like-icon" class="material-icons fav<%= (post.liked)?(' liked'):('') %>" style="font-size:30px" onclick="like(<%= post.id %>);">favorite</i>
+                            <span id="like-num" class="num"><%= post.like %></span>
+                        </div>
+                        <div class="eye-koko">
+                            <i class="material-icons rm-eye" style="font-size:30px">remove_red_eye</i> 
+                            <span class="num-eye"><%= post.view %></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="report-post">
+                <!-- <button class="call" onclick="postReport(<%= post.id %>);">신고</button> -->
+            </div>
+            <div id="comments" class="comments">
+<% include comment/list %>
+            </div>
+            <div class="comment-write">
+                <textarea id="comment" class="input-comment" placeholder="댓글을 입력해 보세요."></textarea>
+                <button class="comment-btn btn btn-outline-success" onclick="commentAdd(<%= post.id %>); return false;">확인</button>
+            </div>
+        </div>
+        <footer>
+<% include ../component/footer %>
+        </footer>
+    </body>
+</html>

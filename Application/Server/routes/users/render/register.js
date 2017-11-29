@@ -1,6 +1,6 @@
 module.exports = function () {
     return function (req, res) {
-        res.render('register', {
+        res.render('users/register', {
             user: {
                 logined: req.isAuthenticated()
             },

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+        <!-- CKEditor -->
+        <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div class="posting">
+            <h2 class="header">자유게시판 글 작성</h2>
+            <form action="/freeboard/write" method ="POST">
+                <div>
+                    <input type="text" class="title" placeholder="Title" name="title" required>
+                </div>
+                <div class="content">
+                    <textarea id="editor" name="content"></textarea>
+                </div>
+                <script>
+                    ClassicEditor
+                        .create(document.querySelector('#editor'))  
+                        .catch(error => {
+                            console.error( error );
+                    });
+                </script>
+                <!-- <div class="upload-btn-group">
+                    <div class="upload-btn">
+                        <label for="input-file">
+                            <i class="material-icons">add</i>
+                        </label>
+                        <input type="file" id="input-file" multiple>
+                    </div>
+                    <div class="upload-btn">
+                        <label for="input-image">
+                        <i class="material-icons">image</i>
+                        </label>
+                        <input type="file" id="input-image" multiple>
+                    </div>
+                    <div class="upload-btn">
+                        <label for="input-video">
+                            <i class="material-icons">videocam</i>
+                        </label>
+                        <input type="file" id="input-video" multiple>
+                    </div>
+                </div> -->
+                <hr>
+                <div class="submit">
+                    <input type="submit" value="발행">
+                </div>
+            </form>
+        </div>
+        <footer>
+<% include ../component/footer %>
+        </footer>
+    </body>
+</html>

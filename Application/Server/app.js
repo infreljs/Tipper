@@ -35,17 +35,18 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(cookieParser());
-app.use(session(require('./session')(MySQLStore)));
+app.use(session(require('./config/session')(MySQLStore)));
 app.use(flash());
 
 // Passport
 app.use(passport.initialize());
 app.use(passport.session());
-require('./passport')(passport, conn);
+require('./config/passport')(passport, conn);
 
 // Router
 app.use('/', require('./routes')(app, conn));
 app.use('/admin', require('./routes/admin')(app, conn));
+app.use('/error', require('./routes/error')(app, conn));
 app.use('/freeboard', require('./routes/freeboard')(app, conn));
 app.use('/mypage', require('./routes/mypage')(app, conn));
 app.use('/tipboard', require('./routes/tipboard')(app, conn));
@@ -81,6 +82,8 @@ app.use(function (err, req, res, next) {
 });
 
 // Listen
-app.listen(3333, function () {
-    console.log('connected!');
+const PORT = require('./config/config').port;
+const HOSTNAME = require('./config/config').hostname;
+app.listen(PORT, HOSTNAME, function () {
+    console.log('[v] Tipper Server Opened at ' + HOSTNAME + ':' + PORT);
 });

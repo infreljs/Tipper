@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `tipper`.`user` (
   `email` VARCHAR(45) NOT NULL,
   `buyingAmount` INT NOT NULL DEFAULT 0,
   `reportCount` INT NOT NULL DEFAULT 0,
-  `admin` TINYINT NOT NULL DEFAULT 0,
+  `admin` INT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -45,9 +45,8 @@ CREATE TABLE IF NOT EXISTS `tipper`.`tip` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `price` INT NOT NULL,
   `title` TINYTEXT NOT NULL,
-  `view` INT NULL DEFAULT 0,
-  `salesVolume` INT NULL DEFAULT 0,
-  `rank` INT NULL DEFAULT 0,
+  `view` INT NOT NULL DEFAULT 0,
+  `salesVolume` INT NOT NULL DEFAULT 0,
   `user_id` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_tip_user1_idx` (`user_id` ASC),
@@ -68,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `tipper`.`tipComment` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
   `tip_id` INT NOT NULL,
+  `edited` TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `fk_comment_user1_idx` (`user_id` ASC),
   INDEX `fk_comment_tip1_idx` (`tip_id` ASC),
@@ -134,12 +134,12 @@ CREATE TABLE IF NOT EXISTS `tipper`.`tipLike` (
   PRIMARY KEY (`id`),
   INDEX `fk_like_tip1_idx` (`tip_id` ASC),
   INDEX `fk_like_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_like_tip1`
+  CONSTRAINT `fk_like_tip_tip1`
     FOREIGN KEY (`tip_id`)
     REFERENCES `tipper`.`tip` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  CONSTRAINT `fk_like_user1`
+  CONSTRAINT `fk_like_tip_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `tipper`.`user` (`id`)
     ON DELETE CASCADE
@@ -153,6 +153,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tipper`.`payedList` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
+  `price` INT NOT NULL,
   `buyingTime` TIMESTAMP NOT NULL,
   `tip_id` INT NOT NULL,
   INDEX `fk_payedList_user1_idx` (`user_id` ASC),
@@ -178,9 +179,7 @@ CREATE TABLE IF NOT EXISTS `tipper`.`freeboard` (
   `contents` TEXT NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
   `createTime` TIMESTAMP NOT NULL,
-  `view` INT NULL DEFAULT 0,
-  `like` INT NULL DEFAULT 0,
-  `rank` INT NULL DEFAULT 0,
+  `view` INT NOT NULL DEFAULT 0,
   `title` TINYTEXT NOT NULL,
   `user_id` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
@@ -202,6 +201,7 @@ CREATE TABLE IF NOT EXISTS `tipper`.`freeboardComment` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `post_id` INT NOT NULL,
   `user_id` VARCHAR(45) NOT NULL,
+  `edited` TINYINT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   INDEX `fk_freeboardComment_freeboard1_idx` (`post_id` ASC),
   INDEX `fk_freeboardComment_user1_idx` (`user_id` ASC),
@@ -253,6 +253,29 @@ CREATE TABLE IF NOT EXISTS `tipper`.`freeboardReport` (
   CONSTRAINT `fk_freeboardReport_freeboard1`
     FOREIGN KEY (`post_id`)
     REFERENCES `tipper`.`freeboard` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `tipper`.`freeboardLike`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tipper`.`freeboardLike` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `user_id` VARCHAR(45) NOT NULL,
+  `post_id` INT NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_like_post1_idx` (`post_id` ASC),
+  INDEX `fk_like_user1_idx` (`user_id` ASC),
+  CONSTRAINT `fk_like_fb_post1`
+    FOREIGN KEY (`post_id`)
+    REFERENCES `tipper`.`freeboard` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_like_fb_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `tipper`.`user` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;

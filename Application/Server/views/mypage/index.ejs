@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+        <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div id="dashboard" class="dashboard topnav-margin">
+            <div>
+                <h1 class="header"><%= user.username %>님의...</h1>
+                <div class="list" align="centers">
+                    <div class="box box-border-l box-border-rm">
+                        <p>얻은 포인트</p>
+                        <h1><%= dashboard.earnedPoint %>P</h1>
+                    </div>
+                    <div class="box box-border-rm">
+                        <p>현재 포인트</p>
+                        <h1><%= dashboard.point %>P</h1>
+                    </div>
+                    <div class="box box-border-r">
+                        <p>추천</p>
+                        <h1><%= dashboard.likeNum %>개</h1>
+                    </div>
+                </div>
+                <div class="list" align="centers">            
+                    <div class="box box-border-l box-border-rm">
+                        <p>작성한 팁</p>
+                        <h1><%= dashboard.tipNum %>개</h1>
+                    </div>
+                    <div class="box box-border-r">
+                        <p>작성한 글</p>
+                        <h1><%= dashboard.postNum %>개</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-select">
+            <div onclick="location.href='/mypage/tips'">
+                <div>
+                    내가 작성한 팁
+                </div>
+            </div>
+            <div onclick="location.href='/mypage/posts'">
+                <div>
+                    내가 작성한 글
+                </div>
+            </div>
+            <div onclick="location.href='/users/editinfo'">
+                <div>
+                    내 정보 수정
+                </div>
+            </div>
+        </div>
+        <footer>
+<% include ../component/footer %>
+        </footer>
+    </body>
+</html>
