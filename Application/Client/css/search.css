@@ -35,7 +35,8 @@
     border-color .15s ease-in-out;
     font-size: 14px;
 
-    width: 140px;
+    width: 10%;
+    overflow: hidden;
     height: 50px;
     padding: 0;
     padding-left: 10px;
