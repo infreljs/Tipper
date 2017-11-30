@@ -148,11 +148,15 @@ function postDelete(post_id) {
 function postEdit(post_id) {
     $.ajax({
         url: "/freeboard/post/" + post_id,
-        method: "DELETE",
+        method: "PUT",
+        data: {
+            title: $('#edit-title').val(),
+            content: CKEDITOR.instances["edit-content"].getData()
+        },
         dataType: "JSON",
         success: function (data, status, xhr) {
             if (data.status == "s") {
-                location.href = "/freeboard";
+                location.href = "/freeboard/post/" + post_id;
             } else {
                 console.log("서버 오류 발생!");
             }

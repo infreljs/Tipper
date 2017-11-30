@@ -29,10 +29,9 @@
 }
 
 .post-data {
-    margin: 60px 5px 60px 5px;
+    margin: 40px 5px 20px 5px;
     font-size: 18px;
     font-weight: normal;
-    white-space: pre-line;
     color: #060636;
 }
 
@@ -223,7 +222,7 @@
 .posting hr {
     color: rgb(149, 152, 154);
     height: 0.1px;
-    margin-top: 0px;
+    margin-top: 20px;
     background-color: rgb(163, 164, 165);
 }
 
