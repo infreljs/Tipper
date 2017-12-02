@@ -1,42 +1,89 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-var write_tipboard = require('./write_tipboard');
-var editProfile = require('./editProfile');
-var send_authentication = require('./send_email_authentication');
-var tip_detail = require('./tip_deatil');
-var payed_tips = require('./payed_tips');
-var point_add = require('./point_add');
-var tip_like = require('./tip_like'); 
-var point_minus = require('./point_minus');
-var account_destroy = require('./account_destroy');
-var ck_admin = require('./ck_admin');
-var payed_tips = require('./payed_tips');
-var fs = require('fs');
+/*
+    Tipper
 
-app.use(express.static('../Client'));
-app.use(bodyParser.urlencoded({ extended : false}));
-app.listen(80, function(){
-    console.log('connected!');
+    Node.js Server v0.1(dev)
+
+    Author: Lee Jaebin
+    Author: Lee Jaeseok
+*/
+
+// Module
+var express = require('express');
+var session = require('express-session');
+var MySQLStore = require('express-mysql-session')(session);
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var fs = require('fs');
+var multer = require('multer');
+var upload = multer({
+    dest: 'uploads/'
 });
-app.post('/tipboard/write', write_tipboard.writeTipboard);
-app.post('/users/editProfile', editProfile.editProfile);
-app.post('/users/send_authentication', send_authentication.send_authentication);
-app.get('/tipboard/detail', tip_detail.tip_detail);
-app.post('/users/point_add', point_add.point_add);
-app.post('/board/tip_like', tip_like.tip_like);
-app.post('/users/point_minus', point_minus.point_minus);
-app.post('/users/account_destroy', account_destroy.account_destroy);
-app.post('/users/ck_admin', ck_admin.ck_admin);
-app.post('/users/payed_tips', payed_tips.payed_tips);
-app.get('/', function (req, res) {
-    fs.readFile('../Client/temp/test.html', function (error, data) {
-        if (error) {
-            console.log(error);
-        }
-        else {
-            res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
-        }
+var passport = require('passport');
+var flash = require('connect-flash');
+var app = express();
+var mysql_dbc = require('./database')();
+var conn = mysql_dbc.init();
+mysql_dbc.open(conn);
+
+// View Engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+// Middleware
+app.use(express.static('./public'));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
+app.use(cookieParser());
+app.use(session(require('./config/session')(MySQLStore)));
+app.use(flash());
+
+// Passport
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport, conn);
+
+// Router
+app.use('/', require('./routes')(app, conn));
+// app.use('/admin', require('./routes/admin')(app, conn));
+app.use('/error', require('./routes/error')(app, conn));
+app.use('/freeboard', require('./routes/freeboard')(app, conn));
+app.use('/mypage', require('./routes/mypage')(app, conn));
+// app.use('/tipboard', require('./routes/tipboard')(app, conn));
+app.use('/users', require('./routes/users')(app, conn, passport, session));
+
+// Error Handler
+app.use(function (req, res, next) {
+    res.status(404).render('error', {
+        user: (req.isAuthenticated()) ? ({
+            logined: true,
+            admin: req.user.admin,
+            username: req.user.nickname,
+            point: req.user.point
+        }) : ({
+            logined: false
+        }),
+        error: "404 Not Found!"
     });
+});
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).render('error', {
+        user: (req.isAuthenticated()) ? ({
+            logined: true,
+            admin: req.user.admin,
+            username: req.user.nickname,
+            point: req.user.point
+        }) : ({
+            logined: false
+        }),
+        error: "500 Internal Server Error!"
+    });
+});
+
+// Listen
+const PORT = require('./config/config').port;
+const HOSTNAME = require('./config/config').hostname;
+app.listen(PORT, HOSTNAME, function () {
+    console.log('[v] Tipper Server Opened at ' + HOSTNAME + ':' + PORT);
 });

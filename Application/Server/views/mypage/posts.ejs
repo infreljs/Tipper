@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+        <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div id="dashboard" class="dashboard topnav-margin">
+            <div>
+                <h1 class="header"><%= user.username %>님의...</h1>
+                <div class="list" align="centers">
+                    <div class="box box-border-l box-border-rm">
+                        <p>얻은 포인트</p>
+                        <h1><%= dashboard.earnedPoint %>P</h1>
+                    </div>
+                    <div class="box box-border-rm">
+                        <p>현재 포인트</p>
+                        <h1><%= dashboard.point %>P</h1>
+                    </div>
+                    <div class="box box-border-rm">
+                        <p>추천</p>
+                        <h1><%= dashboard.likeNum %>개</h1>
+                    </div>
+                    <div class="box box-border-r">
+                        <p>작성한 글</p>
+                        <h1><%= dashboard.postNum %>개</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="my-postlist" class="board-list">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>댓글수</th>
+                        <th>조회수</th>
+                    </tr>
+                </thead>
+                <tbody>
+<% for (var i=0; i<post.list.length; i++) { %>
+                    <tr onclick="<%= "location.href='/freeboard/post/" + post.list[i].id + "'" %>" class="post">
+                        <td><%= post.list[i].title %></td>
+                        <td><%= post.list[i].commentNum %></td>
+                        <td><%= post.list[i].view %></td>
+                    </tr>
+<% } %>
+                </tbody>
+            </table>
+            <div class="pagenation-group text-center">
+<% for (var i=post.page.firstpage; i<post.page.firstpage+5; i++) { %>
+                <a <%= ((i == post.page.nowpage) || (i > post.page.maxpage))?(''):('href="/mypage?page=' + i + '"') %> class="pagenation<%= (i > post.page.maxpage)?(' disabled'):((i == post.page.nowpage)?(' active'):('')) %>"><%= i %></a>
+<% } %>
+            </div>
+        </div>
+        <footer>
+<% include ../component/footer %>
+        </footer>
+    </body>
+</html>

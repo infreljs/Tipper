@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>Tipper</title>
+        <!-- Icon -->
+        <link rel="icon" href="img/Tipper-icon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" type="text/css" href="css/board.css">
+        <link rel="stylesheet" type="text/css" href="css/template.css">        
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+            <sidebar></sidebar>
+        </nav>
+        <nav id="navbar" class="navbar">
+            <navbar></navbar>
+        </nav>
+        <div class="container">
+            <h1 class="page-title">자유게시판</h1>
+            <div id="freeboard" class="board">
+                <table class="table table-hover gray board-list">
+                    <thead>
+                        <tr>
+                        <th id="max-th">제목</th>
+                        <th>추천</th>
+                        <th>비추천</th>
+                        <th>조회수</th>
+                        <th>작성자</th>
+                        <th>댓글</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="max-th">당신이 생각한 바로 그 제목</td>
+                        <td>31</td>
+                        <td>44</td>
+                        <td>3021</td>
+                        <td>CRJW</td>
+                        <td>일억개</td>
+                    </tr>
+                    <tr>
+                        <td id="max-th">당신이 생각한 바로 그 제목</td>
+                        <td>31</td>
+                        <td>44</td>
+                        <td>3021</td>
+                        <td>CRJW</td>
+                        <td>일억개</td>
+                    </tr>
+                    <tr>
+                        <td id="max-th">당신이 생각한 바로 그 제목</td>
+                        <td>31</td>
+                        <td>44</td>
+                        <td>3021</td>
+                        <td>CRJW</td>
+                        <td>일억개</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="pagenation-group text-center">
+                    <a v-for="page in pages" :href="page.url" class="pagenation" v-cloak>{{ page.id }}</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <app-footer></app-footer>
+        </footer>
+        <!-- Vue.js -->
+        <script src="js/vue.js"></script>
+        <!-- Jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <!-- Javascript -->
+        <script src="js/freeboard.js"></script>
+        <script src="js/template.js"></script>
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+        <!-- CKEditor -->
+        <script src="/ckeditor/ckeditor.js"></script>
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div class="posting">
+            <h2 class="header">팁 작성</h2>
+            <div class="section-buttons">
+                <div class="line">
+                    <button class="button-search">잘생긴 작가</button>
+                    <button class="button-search">연봉 1억</button>
+                    <button class="button-search">이재석과 친구</button>
+                    <button class="button-search">Tipper를 애용</button>
+                    <button class="button-search">~2017.03.12</button>        
+                </div>
+                <div class="line">
+                    <button class="button-search">...</button>
+                    <button class="button-search">좋은작가라..</button>
+                    <button class="button-search">마음이 착함</button>
+                    <button class="button-search">주말에 잔류함</button>
+                    <button class="button-search">Not Set</button>        
+                </div>
+            </div>
+            <form action="/tipboard/post" method ="POST">
+                <div>
+                    <input type="text" class="title" placeholder="Title" name="title" required>
+                </div>
+                <div class="content">
+                    <textarea id="edit-content" class="ckeditor" name="content"></textarea>
+                </div>
+                <script>
+                    CKEDITOR.editorConfig = function( config ) {
+                        config.toolbarGroups = [
+                            { name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+                            { name: 'clipboard', groups: [ 'clipboard', 'undo' ] },
+                            { name: 'editing', groups: [ 'find', 'selection', 'spellchecker', 'editing' ] },
+                            { name: 'forms', groups: [ 'forms' ] },
+                            '/',
+                            { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+                            { name: 'paragraph', groups: [ 'list', 'indent', 'blocks', 'align', 'bidi', 'paragraph' ] },
+                            { name: 'links', groups: [ 'links' ] },
+                            { name: 'insert', groups: [ 'insert' ] },
+                            '/',
+                            { name: 'styles', groups: [ 'styles' ] },
+                            { name: 'colors', groups: [ 'colors' ] },
+                            { name: 'tools', groups: [ 'tools' ] },
+                            { name: 'others', groups: [ 'others' ] },
+                            { name: 'about', groups: [ 'about' ] }
+                        ];
+                    };
+                </script>
+                <hr>
+                <div class="submit">
+                    <input type="submit" value="발행">
+                </div>
+            </form>
+        </div>
+        <footer>
+<% include ../component/footer %>
+        </footer>
+    </body>
+</html>

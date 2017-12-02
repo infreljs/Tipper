@@ -1,0 +1,353 @@
+/* Board */
+
+.page-title {
+    padding-top: 50px;
+    padding-bottom: 10px;
+    margin: auto;
+    width: 90%;
+    color: #060636;
+    font-weight: lighter;
+}
+
+.post-title{
+    text-align : center;
+    width : 67%;
+    margin : 120px auto 50px auto;
+    white-space: pre-line;
+}
+
+.post-title > h1{
+    font-size : 57px;
+    color : #060636;
+    text-align: center;
+    font-weight: lighter;
+}
+
+.post-content{
+    width : 55%;
+    margin : 0 auto;
+}
+
+.post-data{
+    margin : 60px 5px 60px 5px;
+    font-size : 18px;
+    font-weight : normal;
+    white-space : pre-line;
+    color : #060636;
+}
+
+.post-search-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.post-search {
+    background-color: transparent;
+    border: solid 1.2px rgb(158, 158, 159);
+    border-radius: 12px 12px 12px 12px;
+    width: 40%;
+    font-size: 15px;
+    color: rgb(126, 127, 128);
+    padding: 6px 15px 6px 10px;
+}
+
+.post-info{
+    height : 160px;
+    width: 100%;
+    margin-bottom: -20px;
+}
+
+.post-stat{
+    float: right;
+    height: 100%;
+    width: 30%;
+    text-align: right;
+    
+}
+
+.fav{
+    margin-top: 50px;
+    float:right;
+    color: rgb(175, 173, 173);
+}
+
+.rm-eye{
+    float:right;
+    color: rgb(175, 173, 173);
+}
+
+.fav-koko{
+    width: 100%;
+    height : 50%;
+}
+
+.eye-koko{
+    width: 100%;
+    height : 50%;
+}
+
+.rm-eye{
+    margin-top: 10px;
+}
+
+.num{
+    float: right;
+    margin-top: 50px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgb(175, 173, 173);
+}
+
+.num-eye{
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    color: rgb(175, 173, 173);
+}
+
+.post-profile{
+    width : 70%;
+    height: 100%;
+    display : inline-block;
+    line-height: 150px;
+    white-space: nowrap;
+}
+
+.post-stat-content{
+    width: 100%;
+    height: 100%;
+}
+
+.profile-desc{
+    float: left;
+    vertical-align: middle;
+    height : 100%;
+    text-align : left;
+    white-space : nowrap;
+    display : inline-block;
+    font-size : 32px;
+    color : #060636;
+}
+
+.profile-desc > .profile-intro{
+    font-size : 15spx;
+    line-height: 15px;
+    color : grey;
+    font-weight : lighter;
+}
+
+
+.gray-info {
+    margin-top: 10px;
+    justify-content: space-between;
+    color: rgb(149, 152, 154);
+    padding: 5px;
+    font-size: 20px;
+    border-bottom: solid 1px rgb(149, 152, 154);
+}
+
+.gray-info > a {
+    text-decoration: none;
+    color: rgb(149, 152, 154);
+    white-space: nowrap;
+    display : inline-block;
+}
+
+.gray-info > .report-post{
+    white-space: nowrap;
+    display : inline-block;
+    text-align: right;
+}
+
+.btn-main {
+    font-size: 12px;
+    font-family: "bold";
+    width: 120px;
+}
+
+.board {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.board-list {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    width: 90%;
+    color: rgb(126, 127, 128);
+}
+
+.board-list title {
+    width: 60%;
+    padding-left: 30px;
+}
+
+.board-list .post {
+    cursor: pointer;
+}
+
+.pagenation {
+    cursor: pointer;
+    color: rgb(149, 152, 154);
+    margin: 1px 5px 5px 1px;
+}
+
+.pagenation:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.pagenation.active {
+    color: black;
+}
+
+
+/* Posting */
+
+.posting {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding-top: 60px;
+    margin-bottom: 30px;
+}
+
+.posting>.header {
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.posting hr {
+    color: rgb(149, 152, 154);
+    height: 0.1px;
+    margin-top: 0px;
+    background-color: rgb(163, 164, 165);
+}
+
+.posting .title {
+    width: 100%;
+    font-size: 50px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1.5px rgb(149, 152, 154);
+    margin-bottom: 20px;
+    color: rgb(149, 152, 154);
+    font-weight: bold;
+}
+
+.posting .title::-webkit-input-placeholder {
+    color: rgb(182, 182, 182);
+}
+
+.input-comment{
+    width : 100%;
+    height : 140px;
+    margin-top : 30px;
+    margin-bottom : 15px;
+    padding : 15px;
+    color : grey;
+}
+
+.input-comment::-webkit-scrollbar{
+    display : none;
+}
+
+.comment{
+    text-align: right;
+}
+
+.comment-btn{
+    z-index : 10;
+    border-radius: 20px 20px 20px 20px;
+    width : 100px;
+    background-color: white;
+}
+
+.ck-editor__editable {
+    min-height: 400px;
+}
+
+.posting .submit {
+    text-align: right;
+}
+
+.posting .submit>input {
+    background: none;
+    border: none;
+    transition: 0s font-size;
+    font-size: 18px;
+    color: rgb(149, 152, 154);
+}
+
+.posting .submit:hover {
+    font-size: 20px;
+    transition-delay: 0.1s;
+}
+
+.upload-btn-group {
+    margin-top: 10px;
+}
+
+.upload-btn {
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+}
+
+.upload-btn>input {
+    display: none;
+}
+
+.upload-btn i {
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    color: rgb(149, 152, 154);
+}
+
+.comments-list{
+    margin-top: 35px;
+    text-align: left;
+}
+
+#comment_writer{
+    font-style: bold;
+    font-size: 23px;
+    line-height: 20px;
+}
+
+#comment_date{
+    margin-left: 20px;
+    vertical-align: baseline;
+    color : rgb(172, 169, 169);
+}
+
+.writer_info{
+    width: 100%;
+    margin-left: 0px;
+    margin-bottom: 10px;
+}
+
+.comment_text_head{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#call{
+    float: right;
+    text-decoration: none;
+    color: rgb(172, 169, 169);
+}
+
+.gray-info-comment {
+    justify-content: space-between;
+    color: rgb(149, 152, 154);
+    padding: 20px;
+    font-size: 20px;
+    border-bottom: solid 1px rgb(149, 152, 154);
+}

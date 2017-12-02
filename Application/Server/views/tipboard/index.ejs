@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/board.css">
+        <link rel="stylesheet" type="text/css" href="/css/dashboard.css">
+        <link rel="stylesheet" type="text/css" href="/css/payed.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div class="container">
+            <h1 class="page-title">팁 게시판</h1>
+            <div class="section-buttons">
+                <div class="line">
+                    <button class="button-search">잘생긴 작가</button>
+                    <button class="button-search">연봉 1억</button>
+                    <button class="button-search">이재석과 친구</button>
+                    <button class="button-search">Tipper를 애용</button>
+                    <button class="button-search">~2017.03.12</button>        
+                </div>
+                <div class="line">
+                    <button class="button-search">...</button>
+                    <button class="button-search">좋은작가라..</button>
+                    <button class="button-search">마음이 착함</button>
+                    <button class="button-search">주말에 잔류함</button>
+                    <button class="button-search">Not Set</button>        
+                </div>
+            </div>
+            <div class="board contents row">
+<% for (var i=0; i<post.list.length; i++) { %>
+                <div class="item col-6" onclick="location.href='/tipboard/post/<%= post.list[i].id %>'">
+                    <div class="description">
+                        <span id="title"><%= post.list[i].title %></span>
+                        <div class="detail">
+                            <span class="detail_text"><%= post.list[i].text %></span>
+                        </div>
+                        <span id="writer">By <%= post.list[i].author %></span>
+                    </div>
+                    <div class="image"></div>
+                    <div class="price">
+                        <span id="tip_price"><%= post.list[i].price %>P</span>
+                    </div>
+                </div>
+<% } %>
+            </div>
+            <div style="text-align: right; padding-right: 60px;">
+                <a href="/tipboard/write" class="btn btn-outline-success">팁 작성</a>
+            </div>
+        </div>
+        <footer>
+<% include ../component/footer %>
+        </footer>
+    </body>
+</html>

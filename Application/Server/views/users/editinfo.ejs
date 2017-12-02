@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<% include ../component/head %>
+        <link rel="stylesheet" type="text/css" href="/css/account.css">
+    </head>
+    <body>
+        <nav id="sidebar" class="sidebar">
+<% include ../component/sidebar %>
+        </nav>
+        <nav class="navbar">
+<% include ../component/navbar %>
+        </nav>
+        <div class="base-container">
+            <div class="div-center">
+                <div class="paddin mb-2"></div>
+                <div class="div-logo">
+                    <img src="/img/logo.png" alt="Tipper Logo" class="logo">        
+                </div>
+                <div class="form-group mt-5">
+                    <div class="paddin">
+                        <input type="text" placeholder="비밀번호" class="input-account">
+                        <div style="float:right">
+                            <input type="submit" class="question-mark" value="">
+                        </div>
+                    </div>
+                    <div class="paddin">
+                        <input type="text" placeholder="비밀번호 재확인" class="input-account">
+                        <div style="float:right">
+                            <input type="submit" class="valid-checkbox" value="">
+                        </div>
+                    </div>
+                    <div class="paddin">
+                        <input type="text" placeholder="닉네임" class="input-account" value="<%= user.username %>">
+                        <div style="float:right">
+                            <input type="submit" class="valid-checkbox" value="">
+                        </div>
+                    </div>
+                    <div class="paddin">
+                        <input type="email" placeholder="이메일" class="input-account" value="<%= info.email %>">
+                        <div style="margin-left:10px;">@</div>
+                        <select style="margin-left:10px;">
+                            <option value="gmail.com"<%= (info.email_suffix == 1)?(' selected'):('') %>>gmail.com</option>
+                            <option value="naver.com"<%= (info.email_suffix == 2)?(' selected'):('') %>>naver.com</option>
+                            <option value="hanmail.net"<%= (info.email_suffix == 3)?(' selected'):('') %>>hanmail.net</option>
+                        </select>
+                    </div>
+                    <div class="paddin">
+                        <div class="text-account">
+                            이메일로 알림을 수신하겠습니다.        
+                        </div>
+                        <div style="float:right">
+                            <input type="submit" class="checkbox" value="">
+                        </div>               
+                    </div>
+                    <div class="paddin">
+                        <button type="button" class="btn-captcha">captcha</button>
+                    </div>
+                    <div class="paddin">
+                        <button type="button" class="btn btn-success button-account" style="margin-right:7px">취소</button>                         
+                        <button type="button" class="btn btn-success button-account" style="margin-left:7px">완료</button>
+                    </div>
+                    <div class="paddin">
+                        <a href="/withdraw" class="link-account">회원탈퇴</a>
+                    </div>                 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

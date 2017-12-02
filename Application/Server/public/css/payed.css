@@ -1,0 +1,147 @@
+/* TIPS_PAYED */
+
+.payed_info {
+    margin: 20px auto 0px auto;
+    width: 750px;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.all_payed {
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.tips_payed {
+    background-color: rgb(149, 152, 154);
+    height: 450px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    display: table;
+}
+
+*,
+ ::after,
+ ::before {
+    box-sizing: border-box;
+}
+
+.header_payed {
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+
+.div_payed {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.box-border-rm_payed {
+    border-right: solid 0.1px white;
+    margin-right: -5px;
+}
+
+.box-border-l_payed {
+    border-left: solid 0.1px white;
+}
+
+.box_payed {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.box-border-r_payed {
+    border-right: solid 0.1px white;
+}
+
+.tips_payed .list>div {
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.payed_list {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    height: 200px;
+}
+
+.contents {
+    padding: 0px 5%;
+}
+
+.item {
+    height: 200px;
+    box-shadow: -5px 7px 4px -3px #afadad;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.description {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+#title {
+    font-size: 25px;
+}
+
+.detail {
+    width: 75%;
+    height: 50%;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.detail_text {
+    word-break: break-all !important;
+}
+
+#writer {
+    font-size: 18px;
+    font-style: italic;
+}
+
+.image {
+    width: 25%;
+    float: left;
+    height: 100%;
+    background-image: url("../img/test.jpg");
+    background-position: center;
+}
+
+.price {
+    width: 25%;
+    float: left;
+    height: 100%;
+    background-color: rgb(149, 152, 154);
+    line-height: 200px;
+    text-align: center;
+}
+
+#tip_price {
+    color: white;
+    vertical-align: middle;
+    font-size: 18px;
+}
+
+.payed_lists {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    height: 200px;
+}
+
+.item:hover {
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    transform: scale(1.03);
+}
