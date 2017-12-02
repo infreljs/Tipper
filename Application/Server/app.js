@@ -83,7 +83,6 @@ app.use(function (err, req, res, next) {
 
 // Listen
 const PORT = require('./config/config').port;
-const HOSTNAME = require('./config/config').hostname;
-app.listen(PORT, HOSTNAME, function () {
-    console.log('[v] Tipper Server Opened at ' + HOSTNAME + ':' + PORT);
+app.listen(PORT, function () {
+    console.log('[v] Tipper Server Opened at port ' + PORT);
 });
