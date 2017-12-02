@@ -13,10 +13,12 @@
         </nav>
         <section class="banner text-center topnav-margin">
             <div>
-                <p class="header1">너만의 꿀팁 있다면</p>
-                <p class="header2">좋은건 나눠쓰자, 나눠쓰면 복이 오니.</p>
+                <!-- <p class="header1">너만의 꿀팁 있다면</p>
+                <p class="header2">좋은건 나눠쓰자, 나눠쓰면 복이 오니.</p> -->
+                <p class="header1">팁 게시판 준비 중</p>
+                <p class="header2">자유게시판 이용 바람.</p>
 <% if(user.logined) { %>
-                <button class="btn btn-outline-success btn-main soft-edge" onclick="location.href='/tipboard/write'">글 작성</button>
+                <button class="btn btn-outline-success btn-main soft-edge" onclick="location.href='/freeboard/write'">글 작성</button>
 <% } else { %>
                 <button class="btn btn-outline-success btn-main soft-edge" onclick='location.href="/users/register"'>회원 가입</button>
 <% } %>

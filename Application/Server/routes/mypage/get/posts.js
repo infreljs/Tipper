@@ -8,8 +8,8 @@ module.exports = function (conn) {
                 throw err;
             }
             var dashboard = results[0];
-            sql = "SELECT freeboard.id, freeboard.title, freeboard.like, freeboard.view, user.nickname AS author, COUNT(freeboardComment.id) AS commentNum FROM freeboard LEFT JOIN user ON freeboard.user_id=user.id LEFT JOIN freeboardComment ON freeboard.id=freeboardComment.post_id WHERE freeboard.user_id=? GROUP BY freeboard.id";
-            conn.query(sql, [req.user.id], function (err, results) {
+            sql = "SELECT freeboard.id, freeboard.title, (SELECT COUNT(id) FROM freeboardLike WHERE post_id=freeboard.id) AS `like`, freeboard.view, user.nickname AS author, COUNT(freeboardComment.id) AS commentNum FROM freeboard LEFT JOIN user ON freeboard.user_id=user.id LEFT JOIN freeboardComment ON freeboard.id=freeboardComment.post_id WHERE freeboard.user_id=? GROUP BY freeboard.id";
+            conn.query(sql, [req.user.id, req.user.id], function (err, results) {
                 if (err) {
                     throw err;
                 }

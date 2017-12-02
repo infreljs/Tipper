@@ -20,6 +20,5 @@ module.exports = function (app, conn) {
     router.get('/like', require('../util/isAuthenticated')(), require('./get/like')(conn));
     router.post('/like', require('../util/isAuthenticated')(), require('./post/like')(conn));
 
-
     return router;
 }

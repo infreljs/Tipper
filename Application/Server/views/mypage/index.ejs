@@ -24,15 +24,9 @@
                         <p>현재 포인트</p>
                         <h1><%= dashboard.point %>P</h1>
                     </div>
-                    <div class="box box-border-r">
+                    <div class="box box-border-rm">
                         <p>추천</p>
                         <h1><%= dashboard.likeNum %>개</h1>
-                    </div>
-                </div>
-                <div class="list" align="centers">            
-                    <div class="box box-border-l box-border-rm">
-                        <p>작성한 팁</p>
-                        <h1><%= dashboard.tipNum %>개</h1>
                     </div>
                     <div class="box box-border-r">
                         <p>작성한 글</p>
@@ -42,11 +36,6 @@
             </div>
         </div>
         <div class="page-select">
-            <div onclick="location.href='/mypage/tips'">
-                <div>
-                    내가 작성한 팁
-                </div>
-            </div>
             <div onclick="location.href='/mypage/posts'">
                 <div>
                     내가 작성한 글

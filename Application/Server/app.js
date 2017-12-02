@@ -45,11 +45,11 @@ require('./config/passport')(passport, conn);
 
 // Router
 app.use('/', require('./routes')(app, conn));
-app.use('/admin', require('./routes/admin')(app, conn));
+// app.use('/admin', require('./routes/admin')(app, conn));
 app.use('/error', require('./routes/error')(app, conn));
 app.use('/freeboard', require('./routes/freeboard')(app, conn));
 app.use('/mypage', require('./routes/mypage')(app, conn));
-app.use('/tipboard', require('./routes/tipboard')(app, conn));
+// app.use('/tipboard', require('./routes/tipboard')(app, conn));
 app.use('/users', require('./routes/users')(app, conn, passport, session));
 
 // Error Handler

@@ -25,22 +25,6 @@ module.exports = function (conn) {
                     earnedPoint: (earnedPoint) ? (earnedPoint) : ('0'),
                     point: point,
                     likeNum: likeNum
-                },
-                post: {
-                    list: [{
-                        id: '1',
-                        title: '타이틀1',
-                        price: 100,
-                        likeNum: 1000,
-                        viewNum: 1000,
-                        category: '생활',
-                        earnedPoint: 10000
-                    }],
-                    page: {
-                        nowpage: 1,
-                        firstpage: ((Math.ceil((1) / 5) - 1) * 5) + 1,
-                        maxpage: 1
-                    }
                 }
             });
         });

@@ -71,23 +71,12 @@
 }
 
 .contents {
-    margin-top: 20px;
-    width: 40% !important;
-    height: 200px;
-    float: left;
-    margin-left: 9%;
-    box-shadow: -5px 7px 4px -3px #afadad;
-    cursor: pointer;
-    transition: .3s;
+    padding: 0px 5%;
 }
 
-.contents-right {
-    margin-top: 20px;
-    float: right;
-    box-shadow: -5px 7px 4px -3px #afadad;
-    width: 40% !important;
+.item {
     height: 200px;
-    margin-right: 9%;
+    box-shadow: -5px 7px 4px -3px #afadad;
     cursor: pointer;
     transition: .3s;
 }
@@ -149,15 +138,7 @@
     height: 200px;
 }
 
-.contents-right:hover {
-    -webkit-transform: scale(1.03);
-    -moz-transform: scale(1.03);
-    -ms-transform: scale(1.03);
-    -o-transform: scale(1.03);
-    transform: scale(1.03);
-}
-
-.contents:hover {
+.item:hover {
     -webkit-transform: scale(1.03);
     -moz-transform: scale(1.03);
     -ms-transform: scale(1.03);
