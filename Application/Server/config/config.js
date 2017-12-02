@@ -1,4 +1,4 @@
 module.exports = {
-    port: 3333,
-    hostname: 'localhost'
+    port: 80,
+    hostname: 'tipper.infre.kr'
 }

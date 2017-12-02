@@ -1,5 +1,5 @@
 module.exports = function (MySQLStore) {
-    var config = require('../database/db_info').test;
+    var config = require('../database/db_info').real;
     return {
         secret: 'T1pp3r#!^$@%',
         resave: false,
