@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `tipper`.`user` (
   `pw` CHAR(172),
   `salt` CHAR(88),
   `point` INT NOT NULL DEFAULT 0,
-  `createTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `nickname` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `buyingAmount` INT NOT NULL DEFAULT 0,
@@ -41,7 +41,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tipper`.`tip` (
   `contents` TEXT NOT NULL,
   `category` TINYTEXT NOT NULL,
-  `createTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id` INT NOT NULL AUTO_INCREMENT,
   `price` INT NOT NULL,
   `title` TINYTEXT NOT NULL,
@@ -63,7 +63,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`tipComment` (
   `comment` TEXT NOT NULL,
-  `createTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
   `tip_id` INT NOT NULL,
@@ -90,7 +90,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tipper`.`tipReport` (
   `reportId` INT NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
-  `reportTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` VARCHAR(45) NOT NULL,
   `tip_id` INT NOT NULL,
   PRIMARY KEY (`id`),
@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `tipper`.`payedList` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` VARCHAR(45) NOT NULL,
   `price` INT NOT NULL,
-  `buyingTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `tip_id` INT NOT NULL,
   INDEX `fk_payedList_user1_idx` (`user_id` ASC),
   PRIMARY KEY (`id`),
@@ -178,7 +178,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tipper`.`freeboard` (
   `contents` TEXT NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
-  `createTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `view` INT NOT NULL DEFAULT 0,
   `title` TINYTEXT NOT NULL,
   `user_id` VARCHAR(45) NOT NULL,
@@ -197,7 +197,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tipper`.`freeboardComment` (
   `comment` TEXT(300) NOT NULL,
-  `createTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id` INT NOT NULL AUTO_INCREMENT,
   `post_id` INT NOT NULL,
   `user_id` VARCHAR(45) NOT NULL,
@@ -239,7 +239,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tipper`.`freeboardReport` (
   `reportId` INT NOT NULL,
   `id` INT NOT NULL AUTO_INCREMENT,
-  `reportTime` TIMESTAMP NOT NULL,
+  `createTime` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_id` VARCHAR(45) NOT NULL,
   `post_id` INT NOT NULL,
   PRIMARY KEY (`id`),
