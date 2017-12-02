@@ -1,14 +1,15 @@
 module.exports = function (MySQLStore) {
+    var config = require('../database/db_info').test;
     return {
         secret: 'T1pp3r#!^$@%',
         resave: false,
         saveUninitialized: true,
         store: new MySQLStore({
-            host: 'aws.infre.kr',
-            port: 3306,
-            user: 'tippertest',
-            password: 'tippertest',
-            database: 'tippertest'
+            host: config.host,
+            port: config.port,
+            user: config.user,
+            password: config.password,
+            database: config.database
         })
     };
 };
