@@ -7,11 +7,12 @@ module.exports = function (app, conn, passport, session) {
     var express = require('express');
     var router = express.Router();
 
-    router.get('/login', require('../util/isUnauthenticated')(), require('./render/login')());
-    router.get('/logout', require('../util/isAuthenticated')(), require('./logout')());
-    router.get('/register', require('../util/isUnauthenticated')(), require('./render/register')());
-    router.get('/check/iddup', require('../util/isUnauthenticated')(), require('./check/iddup')(conn));
-    router.get('/editinfo', require('../util/isAuthenticated')(), require('./render/editinfo')());
+    router.get('/login', require('../util/isUnauthenticated')(), require('./get/login')());
+    router.get('/logout', require('../util/isAuthenticated')(), require('./get/logout')());
+    router.get('/register', require('../util/isUnauthenticated')(), require('./get/register')());
+    router.get('/check/iddup', require('../util/isUnauthenticated')(), require('./get/iddup')(conn));
+    router.get('/editinfo', require('../util/isAuthenticated')(), require('./get/editinfo')());
+    router.get('/withdraw', require('../util/isAuthenticated')(), require('./get/withdraw')(conn));
     router.get('/login/facebook', passport.authenticate('facebook', {
         scope: 'email'
     }));
@@ -27,8 +28,8 @@ module.exports = function (app, conn, passport, session) {
         failureRedirect: '/users/login',
         failureFlash: true
     }));
-    router.post('/register', require('../util/isUnauthenticated')(), require('./register')(conn, hasher));
-    router.post('/authsend', require('./auth_send')(nodemailer, randomstring, smtpPool, session));
+    router.post('/register', require('../util/isUnauthenticated')(), require('./post/register')(conn, hasher));
+    router.post('/authsend', require('./post/auth_send')(nodemailer, randomstring, smtpPool, session));
 
     return router;
 }
