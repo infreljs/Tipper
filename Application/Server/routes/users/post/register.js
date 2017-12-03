@@ -14,7 +14,7 @@ module.exports = function (conn, hasher) {
                 nickname: req.body.nickname,
                 salt: salt,
                 email: req.body.email + "@" + req.body.email_suffix,
-                createTime: require('../util/now')()
+                createTime: require('../../util/now')()
             };
             var sql = "INSERT INTO `user` SET ?";
             conn.query(sql, user, function (err, results) {
