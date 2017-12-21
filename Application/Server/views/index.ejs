@@ -24,53 +24,6 @@
 <% } %>
             </div>
         </section>
-        <section class="tip-top-ten">
-            <div>
-                <p class="header strong">팁 탑 텐. <span class="italic">TIP TOP TEN.</span></p>
-                <p>Tipper가 뽑은 취고의 꿀팁 10가지.<br>여러분도 도전하세요!</p>
-                <button class="btn btn-outline-success btn-main soft-edge" onclick="location.href='/tipboard/write'">글 작성</button>
-            </div>
-            <div class="cards">
-<% for (var i=0; i<tiptoptencards.length; i++) { %>
-                <div class="tip-card">
-                    <div class="postcard">
-                        <img src="<%= tiptoptencards[i].img %>">
-                        <div class="green-filter"></div>
-                        <h3><%= tiptoptencards[i].title %></h3>
-                    </div>
-                </div>
-<% } %>
-                <div class="tip-card">
-                    <div class="postcard more-card" onclick="location.href='/tipboard/topten'">
-                        <h4>더 보기</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="weekly-tip" class="weekly-tip">
-            <div>
-                <p class="header">금주의 꿀팁 - 게임 분야</p>
-                <hr>
-                <h1 class="title"><%= weekly_tip.title %></h1>
-                <button class="btn btn-outline-success btn-main soft-edge" onclick="location.href='/tipboard/write?category=<%= weekly_tip.title %>'">관련 글 작성!</button>
-            </div>
-            <div class="cards">
-<% for (var i=0; i<weekly_tip.list.length; i++) { %>
-                <div class="tip-card">
-                    <div class="postcard">
-                        <img src="<%= weekly_tip.list[i].img %>">
-                        <div class="blue-filter"></div>
-                        <h3><%= weekly_tip.list[i].title %></h3>
-                    </div>
-                </div>
-<% } %>
-                <div class="tip-card">
-                    <div class="postcard more-card" onclick="location.href='/tipboard/weeklytip'">
-                        <h4>더 보기</h4>
-                    </div>
-                </div>
-            </div>
-        </section>
         <footer>
 <% include ./component/footer %>
         </footer>
